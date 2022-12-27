@@ -1,0 +1,14 @@
+{
+    "editor.guides.bracketPairs": true,
+    "workbench.activityBar.iconClickBehavior": "focus",
+    "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.editor.autoLockGroups": {
+        "mainThreadWebview-markdown.preview": true
+    },
+    "workbench.settings.enableNaturalLanguageSearch": true,
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "Fira Code",
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.wordWrap": "on"
+}
