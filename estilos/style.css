@@ -28,10 +28,9 @@ body{
     margin: 34px 20px 5px 20px ;
     background-color: var(--background-clean);
     border-radius: 15px;
-    width: 90vw;
-    height: 126px;
+    width: 335px;
+    height: 110px;
     align-items: center;
-    border: 1px solid red;
 }
 #box-quantia{
     display: flex;
@@ -40,9 +39,8 @@ body{
     column-gap: 16px;
 }
 #container > img {
-    width: 97.5px;
-    height: 97.5px;
-    margin: 14px;
+    width: 120px;
+    height: 119px;
 
 }
 #quantia, #auto-retirar{
