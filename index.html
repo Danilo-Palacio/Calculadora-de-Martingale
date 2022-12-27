@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <header>
+        <div id="container">
+            <img src="imagens/logo-crash.svg" alt="crash">
+            <div id="infos">
+
+                <div id="box-quantia">
+                    <p><input type="number" name="quantia" id="quantia" placeholder="Quantia">R$</p>
+                    <img src="imagens/meio.svg" alt="metade">
+                    <img src="imagens/2X.svg" alt="duplicar">
+                </div>
+                <div id="box-auto-retirar">
+                    <input type="number" name="auto-retirar" id="auto-retirar" placeholder="Auto-retirar">
+                    <input type="button" value="X" id="clean">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        
+        <p id="title">1.5X</p>
+        <section>
+            <div id="apostas">
+                <div class="box">
+            
+                    <p class="white-t" class="box-t">Aposta</p>
+                    <div class="white-description"></div>
+                </div>
+                <div class="box">
+                    <p class="green-t" class="box-t">Ganhando</p>
+                    <div class="green-description"></div>
+                </div>
+                <div class="box">
+                    <p class="red-t" class="box-t">Perdendo</p>
+                    <div class="red-description"></div>
+                </div>
+            </div>
+            <div id="p-gale">
+                <div class="box">
+                    <p class="white-t" class="box-t">1º Gale</p>
+                    <div class="white-description"></div>
+                </div>
+                <div class="box">
+                    <p class="green-t" class="box-t">Ganhando</p>
+                    <div class="green-description"></div>
+                </div>
+                <div class="box">
+                    <p class="red-t" class="box-t">Perdendo</p>
+                    <div class="red-description"></div>
+                </div>
+            </div>
+            <div id="s-gale">
+                <div class="box">
+                    <p class="white-t" class="box-t">2º Gale</p>
+                    <div class="white-description"></div>
+                </div>
+                <div class="box">
+                    <p class="green-t" class="box-t">Ganhando</p>
+                    <div class="green-description"></div>
+                </div>
+                <div class="box">
+                    <p class="red-t" class="box-t">Perdendo</p>
+                    <div class="red-description"></div>
+                </div>
+            </div>
+            <div class="botoes">
+                <button id="limpar"><img src="imagens/Limpar.svg" alt=""></button>
+                <button id="calcular"><img src="imagens/Calcular.svg" alt="calcular"></button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="crash"><p>Crash</p></div>
+        <img src="imagens/logo_blaze.svg" alt="logo-blaze">
+        <div id="double"><p>Double</p></div>
+    </footer>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
