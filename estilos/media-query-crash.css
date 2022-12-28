@@ -20,9 +20,7 @@ Grandes Telas: acima de 1200px
     --background-clean:#1A242D;
     --white-50:hsla(0, 0%, 100%, 0.5);
 }
-
-@media screen and (min-width: 768px) {
-
+@media screen and (min-width: 992px){
     body{
         margin: 0;
         padding: 0;
@@ -35,37 +33,61 @@ Grandes Telas: acima de 1200px
         height: 100vh;
     
         display: grid;
-        grid-template-columns: 33vw 33vw 33vw;
-        grid-template-rows: 33vh 33vh 33vh;
+        grid-template-columns:5vw 30vw 30vw 30vw 5vw;
+        grid-template-rows: 5vh 30vh 30vh 30vh 5vh;
+
+        align-items: stretch;
+        justify-items: stretch;
     }
     header{
-        grid-column: 1;
-        grid-row: 1;
+
+        grid-area: 2 / 3 / 2 / 2;
         
-        justify-self:flex-end;
     }
     main{
-        width: 50.51vw;
-        height: 90vh;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2%;
+        padding: 0 1rem;
+        align-items: center;
+        justify-items: center;
+
         border: 1px solid var(--background-clean);
         border-radius: 1rem;
 
-        grid-column: span 2;
-        grid-row: span 3;
-        align-self: center;
-        justify-self: center;
+        grid-area: 2 / 3 / 5 / 5;
+
+        /* Este é um atalho para:
+        grid-row-start: 1;
+        grid-column-start: 2;
+        grid-row-end: 4;
+        grid-column-end: 3; */
+        
+
+        transform: scale(90%);
         
     }
-    #cards-count {
-        width: 20rem;
+    #count {        
+        min-width: 18rem;
+        min-height: 16rem;
+        width: 100%;
+        height: 100%;
+        max-width: 21rem;
+        max-height: 19rem;
+        
     }
     footer{
-        grid-column: 1;
-        grid-row: 3;
-        width: 22.333rem;
+        grid-column: 2;
+        grid-row: 4;
+        width: 30vw;
 
         
-        justify-self:flex-end;
     }
+}
 
+@media screen and (min-width: 1200px) {
+
+   
 }
