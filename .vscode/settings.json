@@ -10,5 +10,7 @@
     "editor.fontFamily": "Fira Code",
     "editor.autoClosingBrackets": "languageDefined",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "diffEditor.wordWrap": "on",
+    "prettier.proseWrap": "always"
 }
