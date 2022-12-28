@@ -4,10 +4,308 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Gale Double</title>
+    <title>Calc. Gale Double</title>
     <link rel="stylesheet" href="estilos/style-double.css">
+    <link rel="stylesheet" href="estilos/media-query-double.css">
 </head>
 <body>
-   
-  </body>
+    <header>
+        <div id="container-menu">
+          <img src="imagens/Logo Double.svg" alt="crash">
+          <div id="infos">
+            <!-- Primeira linha -->
+                <div id="box-quantia">
+                    
+                    <input type="number" name="quantia" id="quantia"
+                    min="1.1" placeholder="R$" required >
+                   
+                    <img src="imagens/meio.svg" alt="metade">
+                    <img src="imagens/2X.svg" alt="duplicar">
+                </div>
+
+            <!-- Segunda Linha -->
+                <div id="box-escolha">
+                    <input type="button" value="2X" class="btn-outline  red">
+                    <input type="button" value="14X" class="btn-outline white">
+                    <input type="button" value="2X" class="btn-outline black">
+                </div>
+
+            <!-- Terceira linha -->
+            <input type="button" value="Nova Conta" id="new_count">
+                
+          </div>
+        </div>
+    </header>
+  
+
+    <main>
+        <section id="count">
+            <div id="title-count">
+                <p> Conta 1 </p>
+                <p> 1.5X </p>
+            </div>
+            <div id="cards-count">
+                <div id="apostas">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">Aposta</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="red-title card-title" class="box-t">Perdendo</p>
+                        <div class="red-description card-description"></div>
+                    </div>
+                </div>
+                <div id="p-gale">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">1º Gale</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="red-title card-title" class="box-t">Perdendo</p>
+                    <div class="red-description card-description"></div>
+                    </div>
+                </div>
+                <div id="s-gale">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">2º Gale</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="red-title card-title" class="box-t">Perdendo</p>
+                    <div class="red-description card-description"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="clear-count">
+                <img src="imagens/Limpar.svg" alt="" />
+            </div>
+        </section>  
+        <section id="count">
+            <div id="title-count">
+                <p> Conta 1 </p>
+                <p> 1.5X </p>
+            </div>
+            <div id="cards-count">
+                <div id="apostas">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">Aposta</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="red-title card-title" class="box-t">Perdendo</p>
+                        <div class="red-description card-description"></div>
+                    </div>
+                </div>
+                <div id="p-gale">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">1º Gale</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="red-title card-title" class="box-t">Perdendo</p>
+                    <div class="red-description card-description"></div>
+                    </div>
+                </div>
+                <div id="s-gale">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">2º Gale</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="red-title card-title" class="box-t">Perdendo</p>
+                    <div class="red-description card-description"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="clear-count">
+                <img src="imagens/Limpar.svg" alt="" />
+            </div>
+        </section> <section id="count">
+            <div id="title-count">
+                <p> Conta 1 </p>
+                <p> 1.5X </p>
+            </div>
+            <div id="cards-count">
+                <div id="apostas">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">Aposta</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="red-title card-title" class="box-t">Perdendo</p>
+                        <div class="red-description card-description"></div>
+                    </div>
+                </div>
+                <div id="p-gale">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">1º Gale</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="red-title card-title" class="box-t">Perdendo</p>
+                    <div class="red-description card-description"></div>
+                    </div>
+                </div>
+                <div id="s-gale">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">2º Gale</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="red-title card-title" class="box-t">Perdendo</p>
+                    <div class="red-description card-description"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="clear-count">
+                <img src="imagens/Limpar.svg" alt="" />
+            </div>
+        </section> <section id="count">
+            <div id="title-count">
+                <p> Conta 1 </p>
+                <p> 1.5X </p>
+            </div>
+            <div id="cards-count">
+                <div id="apostas">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">Aposta</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="red-title card-title" class="box-t">Perdendo</p>
+                        <div class="red-description card-description"></div>
+                    </div>
+                </div>
+                <div id="p-gale">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">1º Gale</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="red-title card-title" class="box-t">Perdendo</p>
+                    <div class="red-description card-description"></div>
+                    </div>
+                </div>
+                <div id="s-gale">
+                    <div class="box">
+                    <p class="white-title card-title" class="box-t">2º Gale</p>
+                    <div class="white-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="green-title card-title" class="box-t">Ganhando</p>
+                    <div class="green-description card-description"></div>
+                    </div>
+                    <div class="box">
+                        <p class="gold-title card-title" class="box-t">Perdendo</p>
+                        <div class="gold-description card-description"></div>
+                    </div>
+                    <div class="box">
+                    <p class="red-title card-title" class="box-t">Perdendo</p>
+                    <div class="red-description card-description"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="clear-count">
+                <img src="imagens/Limpar.svg" alt="" />
+            </div>
+        </section>   
+                    
+    </main>
+
+
+    <footer>
+    <div id="crash"><p>Crash</p></div>
+    <img src="imagens/logo_blaze.svg" alt="logo-blaze" />
+    <div id="double"><p>Double</p></div>
+    </footer>
+      <script src="scripts/scripts.js"></script>
+</body>
 </html>
