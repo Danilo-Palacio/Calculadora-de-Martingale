@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+/* Typical Device Breakpoints
+-------------
+Pequenas Telas: até 600px
+Celular : de 600 até 768px
+Tablet: 768px até 992px
+Desktop: 992px até 1200px
+Grandes Telas: acima de 1200px
+*/
+
+:root{
+    --background:#0F1923;
+    --red:#E81538;
+    --red-50:#e8153880;
+    --green:#04D47C;
+    --green-50:#04D47C80;
+    --white:#FFFFFF;
+    --background-clean:#1A242D;
+    --white-50:hsla(0, 0%, 100%, 0.5);
+}
+
+@media screen and (max-width: 992px){
+
+   #back{
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+   }
+   main{
+    max-width: 800px;
+   }
+
+}
+@media screen and (min-width: 992px){
+    header, footer{
+        width: 21.533rem;
+    }
+    #back{
+        display: grid;
+        grid-template-columns: 450px 1fr;
+        grid-template-areas:
+        "header main "
+        " . main"
+        "footer main ";
+        align-items: center;
+        justify-items: center;
+        height: 100vh;}
+
+    header{
+        grid-area: header;
+        justify-self: center;
+    }
+    main{
+        grid-area: main;
+        max-width: 700px;
+    }
+    .crash, double{
+        height: 100vh;
+        align-content: center;
+    }
+    footer{
+        grid-area: footer;
+        
+        justify-self: center;
+    }
+    #card{
+        padding: 5px ;
+    }
+    .credito{
+        position: absolute;
+        bottom: 0px;
+    }
+ }
+ 
+

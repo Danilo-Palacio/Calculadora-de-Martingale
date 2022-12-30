@@ -4,14 +4,14 @@
 
 :root{
     --background:#0F1923;
-    --red:#E81538;
-    --red-50:#e8153880;
-    --green:#04D47C;
-    --green-50:#04D47C80;
+    --red:hsl(350, 83%, 50%);
+    --red-50:hsla(350, 83%, 50%, 0.502);
+    --green:hsl(155, 96%, 42%);
+    --green-50:hsla(155, 96%, 42%, 0.502);
     --white:#FFFFFF;
     --background-clean:#1A242D;
     --white-50:hsla(0, 0%, 100%, 0.5);
-    --ouro :linear-gradient(180deg, #ECDD59 0%, rgba(225, 210, 80, 0.85) 21.88%, #D7C947 44.27%, rgba(206, 192, 64, 0.81) 60.42%, #CCBE3E 100%);
+    --ouro :linear-gradient(50deg, #ECDD59 0%, rgba(225, 210, 80, 0.85) 21.88%, #D7C947 44.27%, rgba(206, 192, 64, 0.81) 60.42%, #CCBE3E 100%);
 }
 
     body{
@@ -21,15 +21,13 @@
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
         background-color: var(--background);
+        width: 100vw;
+        height: 100vh;
 
         display: flex;
         align-items: center;
         justify-content: center; }
 
-    body > #back{
-        display: flex;
-        flex-direction: column;
-        align-items: center; }
 
     #container-menu{
         width: 21.533rem;
@@ -90,10 +88,12 @@
         background-color: var(--background-clean);
         color: var(--white-50);
 
-        text-align: center;}
+        text-align: center;
+        cursor: pointer;}
  
  
 /* Segunda linha */
+/* Double */
     #box-escolha{
         display: flex;
         justify-content: space-between;
@@ -115,7 +115,34 @@
         width: 2.667rem;
         border: 0;}
 
+/* Crash */
+#box-auto-retirar{
+    display: flex;
+    background-color: var(--white-50);
+    border-radius: 5px;}
+#auto-retirar{
+    background-color: var(--background);
+        border: 0;
+        outline: 0;
+        border-radius: 5px;
+        color: var(--white);
+        text-align: start;
+        text-indent: 1rem;
 
+        font-size: 0.7em;
+        width: 9.015rem;
+        height: 2.333rem ;
+        padding: 0;}
+#btn-clean{
+    height: 2.333rem;
+    background-color: transparent;
+    width: 2rem;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    font-size: 1rem;
+    color: var(--background);
+
+}
 
 /* Terceira linha */
     #new_count{
@@ -123,6 +150,12 @@
         width: 5.867rem;
         font-size: 0.733em;
         align-self: flex-end;}
+
+        
+
+
+
+
 
 
 
@@ -137,13 +170,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;}
+        justify-content: space-around;
+        padding: 20px;}
 
 
 
 /* Cabeçalho do Cartão */
     .header-card{
-        margin-top: 20px;
         
         width: 15.333rem;
         height: 1.667rem;
@@ -174,14 +207,14 @@
         justify-content: center;}
 /* Cartão */
     #cards-account{
-
         width: 18rem;
-        height: 19.333rem;
+        
         border-radius: 0.333rem;
         
         background-color: var(--background-clean);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: flex-end;}
     #account {
         display: flex;
@@ -206,19 +239,23 @@
         font-weight: 400;
 
         text-align: center;
-        border-radius: 0.333rem 0.333rem 0 0;}
+        border-radius: 0.333rem 0.333rem 0 0;
+    
+        opacity:0.5;}
     .card-account-description{
 
         width: 4.667rem;
         height: 2.467rem;
         border-radius: 0.333rem;
-        font-size: 1rem;}
+        font-size: 1rem;
+    
+        opacity:0.5;}
 
     .white-title{
         background-color: var(--white-50);
         color: var(--background);}
     .white-description{
-        background-color: var(--white);}
+        background-color: var(--white); }
 
     .green-title{
         background-color: var(--green-50);
@@ -246,54 +283,90 @@
     border-color: var(--white);
     color: var(--white);
 
-    margin-right: 1.333rem;}
+    margin-right: 1.333rem;
+    margin-bottom: 10px;}
 
 
 
 /* footer */
-    footer{
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+    footer > section{
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 
-    margin: 20px 0px;
+    margin: 20px 0px; }
 
+    footer > section > a {
+        text-decoration: none;
     }
     #crash, #double{
-    width: 6.467rem;
-    height: 2.38rem;
+        width: 6.9rem;
+        height: 2.38rem;
 
-    border-radius: 5px;
-    color: var(--white);
-    font-size: 1.255em;
-    font-weight: 800;
+        border-radius: 5px;
+        color: var(--white);
+        background-color: var(--background-clean);
+        font-size: 1.255em;
+        font-weight: 800;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    }
+        cursor: pointer; }
+
     #crash > p, #double > p{
     margin: 0;
     padding: 0;
     align-items: center;
-    }
-    #double{
-    margin-left: -25px;    
-    border-radius: 0px 5px 5px 0px;
-    }
-    #crash{
-    margin-right: -25px;    
-    border-radius: 5px 0px 0px 5px;
-    }
+
+    user-select: none;}
+
+    #double{   
+        margin-left: -2.5rem;
+    border-radius: 0px 5px 5px 0px;}
+    
+    #crash{  
+        margin-right: -2.4rem;
+    border-radius: 5px 0px 0px 5px;}
+
+
     #crash:hover, #double:hover{
+    background-color: var(--background-clean);}
+    #crash:active, #double:active{
+        background-color: var(--green);
+        color: var(--background);}
 
-    background-color: var(--background-clean);
-    }
-    footer >img{
-    width: 3.318rem;
-    z-index: 9;
+    #logo-blaze{
+        clip-path: polygon(56% 17%, 79% 58%, 54% 77%, 45% 76%, 20% 58%);
+        
+        z-index: 9;
+        cursor: pointer;}
+    #logo-blaze:active{
+        transform: scale(1.1);}
 
-    }
+/* Créditos */
+        .credito, .credito a{
+            position: relative;
+            bottom: 1px;
+            width: 21.533rem;
+            height: 1.333rem;
+
+            background-color: var(--background-clean);
+            color: var(--green);
+            text-decoration: none;
+            
+            font-size: 0.6rem;
+            font-weight: 300;
+            border-radius: 5px 5px 0 0;
+            margin: 0px;
+        }
