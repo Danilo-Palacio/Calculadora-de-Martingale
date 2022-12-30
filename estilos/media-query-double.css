@@ -22,40 +22,44 @@ Grandes Telas: acima de 1200px
 }
 
 @media screen and (min-width: 1030px){
-    body{
+   #background{
         margin: 0;
         padding: 0;
         font-size: 1rem;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
         background-color: var(--background);
-        width: 100vw;
+        width: 66.313rem;
         height: 100vh;
         display: grid;
-        grid-template-columns: 5vw 30vw 30vw 30vw 5vw;
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 5vh 30vh 30vh 30vh 5vh;
         justify-items: center;
     }
     header{
 
-        grid-area: 2 / 3 / 2 / 2;
-        align-self: start;
-
         display: flex;
         flex-direction: row;
+        align-self: center;
+        justify-self: center;
+        grid-column: 1;
+        grid-row: 2;
         
+    }
+    #container-menu{
+        margin: 0;
     }
     main{
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+        border-radius: 1rem;
+        grid-area: 1 / 2 / 6 / 4;
     
-    border-radius: 1rem;
-    grid-area: 2 / 3 / 5 / 5;
-    transform: scale(90%);
-    align-content: center;
-    justify-items: center;
+        align-content: center;
+        justify-items: center;
         
     }
     #count {        
@@ -64,7 +68,7 @@ Grandes Telas: acima de 1200px
         
     }
     footer{
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 4;
         width: 30vw;
 
