@@ -21,7 +21,7 @@ Grandes Telas: acima de 1200px
     --white-50:hsla(0, 0%, 100%, 0.5);
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 900px){
 
    #back{
     display: flex;    
@@ -33,7 +33,7 @@ Grandes Telas: acima de 1200px
    }
 
 }
-@media screen and (min-width: 992px){
+@media screen and (min-width: 900px){
     header, footer{
         width: 21.533rem;
     }
