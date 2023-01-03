@@ -86,10 +86,13 @@ function somaGale(i){ // Faz o calculo dos Martingales
     
     let contaAposta = inputQuantia.value * i; // Quanto tem que apostar
         contaAposta = contaAposta.toFixed(1);
+
     let contaGanhou = inputQuantia.value * i * 2;// Se ganhar
         contaGanhou = contaGanhou.toFixed(1);
+
     let valorBranco = inputQuantia.value * 14; // Se der branco
         valorBranco = valorBranco.toFixed(1);
+        
     let contaPerdeu = inputQuantia.value * i; // Se perder
         contaPerdeu = contaPerdeu.toFixed(1);
     
