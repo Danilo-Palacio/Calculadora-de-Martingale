@@ -12,6 +12,7 @@
     --background-clean:#1A242D;
     --white-50:hsla(0, 0%, 100%, 0.5);
     --ouro :linear-gradient(50deg, #ECDD59 0%, rgba(225, 210, 80, 0.85) 21.88%, #D7C947 44.27%, rgba(206, 192, 64, 0.81) 60.42%, #CCBE3E 100%);
+    --ouro-50 :linear-gradient(50deg, hsla(54, 79%, 64%, 0.5) 0%, hsla(54, 71%, 60%,  0.5) 21.88%, hsla(54, 64%, 56%,  0.5) 44.27%, rgba(206, 192, 64, 0.81) 60.42%, hsla(54, 58%, 52%,  0.5) 100%);
 }
 
     body{
@@ -90,7 +91,7 @@
 
         text-align: center;
         cursor: pointer;}
-    .btn-full:hover{   }
+    .btn-full:hover{background-color: var(--background);}
     .btn-full:active{
         background-color: var(--green);
         border:0;
@@ -245,14 +246,16 @@
     .card-account-title{
         width: 3.8rem;
         height: 0.8rem;
-        font-size: 0.533em;
+        font-size: 0.533rem;
         margin: 0.067rem;
         font-weight: 400;
 
         text-align: center;
         border-radius: 0.333rem 0.333rem 0 0;
+
+        color: var(--white);
     
-        opacity:0.5;}
+        opacity:1;}
     .card-account-description{
 
         width: 4.667rem;
@@ -263,20 +266,17 @@
         opacity:0.5;}
 
     .white-title{
-        background-color: var(--white-50);
-        color: var(--background);}
+        background-color: var(--white-50);}
     .white-description{
         background-color: var(--white); }
 
     .green-title{
-        background-color: var(--green-50);
-        color: var(--white);}
+        background-color: var(--green-50);}
     .green-description{
         background-color:var(--green);}
 
     .gold-title{
-        background: var(--ouro);
-        color: var(--background);}
+        background: var(--ouro-50);}
     .gold-description{
         background: var(--ouro);}
 
@@ -285,12 +285,16 @@
         color: var(--white);}
     .red-description{
         background-color: var(--red);}
-    #account  span {
+   
+    .account1 span, .account2 span, .account3 span, .account4 span{
         text-align: center;
-        font-size: 1.5rem;
         color: var(--background);
         opacity: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    
 /* Nova Conta */
 .newaccount{
     color: var(--white);
