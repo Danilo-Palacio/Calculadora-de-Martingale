@@ -7,6 +7,8 @@
     <title>Calc. Gale Double</title>
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/media-query.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
     
 </head>
 <body>
@@ -23,8 +25,8 @@
                         <input type="number" name="quantia" id="quantia"
                         min="1.1" placeholder="R$" required >
         
-                        <input type="button" value="1/2" class="btn_quantia btn-full">
-                        <input type="button" value="2X" class="btn-full btn_quantia ">
+                        <input type="button" value="1/2" class="btn_quantia btn-full" id="btn_metade" onclick="cliqueMetade()">
+                        <input type="button" value="2X" class="btn-full btn_quantia" id="btn_dobro" onclick="cliqueDobro()">
                     </div>
                 <!-- Segunda Linha -->
                     <div id="box-escolha">
@@ -33,20 +35,92 @@
                         <input type="button" value="2X" class="btn-outline black btn-full">
                     </div>
                 <!-- Terceira linha -->
-                    <input type="button" value="Nova Conta" id="new_count" class="btn-full">
+                    <input type="button" value="Nova Conta" id="new_count" class="btn-full" onclick="btnNovaConta(0)">
               </div>
             </div>
         </header>
 
         <!-- Main está ok -->
         <main class="double">
-            <section id="card">
+            <section id="card" class="card1">
                 <div class="header-card">
-                    <p class="header-card-title header-card-set"> Conta 1 </p>
-                    <p class="header-card-multiple header-card-set"> 1.5X </p>
+                    <p class="header-card-title header-card-set title1"> Conta 1 </p>
+                    <p class="header-card-multiple header-card-set multiple1">  </p>
                 </div>
                 <div id="cards-account">
-                    <section id="account">
+                    <section id="account" class="account1">
+                        <div class="sem-gale">
+                            <div class="aposta box">
+                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <span class="white-description card-account-description "></span>
+                            </div>
+                            <div class="ganhando box">
+                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <span class="green-description card-account-description"></span>
+                            </div>
+                            <div class="deu-branco box">
+                                <p class="gold-title card-account-title" class="box-t">Deu Branco</p>
+                                <span class="gold-description card-account-description"></span>
+                            </div>
+                            <div class="perdendo box">
+                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <span class="red-description card-account-description"></span>
+                            </div>
+                        </div>
+                        <div id="primeiro-gale">
+                            <div class="aposta box">
+                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <div class="white-description card-account-description"></div>
+                            </div>
+                            <div class="ganhando box">
+                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <div class="green-description card-account-description"></div>
+                            </div>
+                            <div class="deu-branco box">
+                                <p class="gold-title card-account-title" class="box-t">Deu Branco</p>
+                                <div class="gold-description card-account-description"></div>
+                            </div>
+                            <div class="perdendo box">
+                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <div class="red-description card-account-description"></div>
+                            </div>
+                        </div>
+                        <div id="segundo-gale">
+                            <div class="aposta box">
+                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <div class="white-description card-account-description"></div>
+                            </div>
+                            <div class="ganhando box">
+                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <div class="green-description card-account-description"></div>
+                            </div>
+                            <div class="deu-branco box">
+                                <p class="gold-title card-account-title" class="box-t">Deu Branco</p>
+                                <div class="gold-description card-account-description"></div>
+                            </div>
+                            <div class="perdendo box">
+                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <div class="red-description card-account-description"></div>
+                            </div>                        
+                        </div>
+                    </section>
+                    <section class="newaccount newaccount1">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                            </span>
+                        <p>Clique em <strong>nova conta</strong> 
+                            para adicionar</p>
+                    </section>
+                        <input type="button" value="Limpar" class="btn-clean btn-full btn1" onclick="limparConta(1)">
+                </div>
+            </section>
+            <section id="card"class="card2">
+                <div class="header-card">
+                    <p class="header-card-title header-card-set title2"> Conta 2 </p>
+                    <p class="header-card-multiple header-card-set multiple2"> </p>
+                </div>
+                <div id="cards-account">
+                    <section id="account" class="account2">
                         <div class="sem-gale">
                             <div class="aposta box">
                                 <p class="white-title card-account-title" class="box-t">Aposta</p>
@@ -102,16 +176,21 @@
                             </div>                        
                         </div>
                     </section>
-                        <input type="button" value="Limpar" class="btn-clear btn-full">
+                    <section class="newaccount newaccount2">
+                        <span class="material-symbols-outlined"> add_circle </span>
+                        <p>Clique em <strong>nova conta</strong> 
+                            para adicionar</p>
+                    </section>
+                        <input type="button" value="Limpar" class="btn-clean btn-full btn2" onclick="limparConta(2)">
                 </div>
             </section>
-            <section id="card">
+            <section id="card"class="card3">
                 <div class="header-card">
-                    <p class="header-card-title header-card-set"> Conta 1 </p>
-                    <p class="header-card-multiple header-card-set"> 1.5X </p>
+                    <p class="header-card-title header-card-set title3"> Conta 3 </p>
+                    <p class="header-card-multiple header-card-set multiple3">  </p>
                 </div>
                 <div id="cards-account">
-                    <section id="account">
+                    <section id="account" class="account3">
                         <div class="sem-gale">
                             <div class="aposta box">
                                 <p class="white-title card-account-title" class="box-t">Aposta</p>
@@ -167,16 +246,23 @@
                             </div>                        
                         </div>
                     </section>
-                        <input type="button" value="Limpar" class="btn-clear btn-full">
+                    <section class="newaccount newaccount3">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                            </span>
+                        <p>Clique em <strong>nova conta</strong> 
+                            para adicionar</p>
+                    </section>
+                        <input type="button" value="Limpar" class="btn-clean btn-full btn3" onclick="limparConta(3)">
                 </div>
             </section>
-            <section id="card">
+            <section id="card"class="card4">
                 <div class="header-card">
-                    <p class="header-card-title header-card-set"> Conta 1 </p>
-                    <p class="header-card-multiple header-card-set"> 1.5X </p>
+                    <p class="header-card-title header-card-set title4"> Conta 4 </p>
+                    <p class="header-card-multiple header-card-set multiple4">  </p>
                 </div>
                 <div id="cards-account">
-                    <section id="account">
+                    <section id="account" class="account4">
                         <div class="sem-gale">
                             <div class="aposta box">
                                 <p class="white-title card-account-title" class="box-t">Aposta</p>
@@ -232,74 +318,17 @@
                             </div>                        
                         </div>
                     </section>
-                        <input type="button" value="Limpar" class="btn-clear btn-full">
-                </div>
-            </section>
-            <section id="card">
-                <div class="header-card">
-                    <p class="header-card-title header-card-set"> Conta 1 </p>
-                    <p class="header-card-multiple header-card-set"> 1.5X </p>
-                </div>
-                <div id="cards-account">
-                    <section id="account">
-                        <div class="sem-gale">
-                            <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
-                            </div>
-                            <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
-                            </div>
-                            <div class="deu-branco box">
-                                <p class="gold-title card-account-title" class="box-t">Deu Branco</p>
-                                <div class="gold-description card-account-description"></div>
-                            </div>
-                            <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
-                            </div>
-                        </div>
-                        <div id="primeiro-gale">
-                            <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
-                            </div>
-                            <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
-                            </div>
-                            <div class="deu-branco box">
-                                <p class="gold-title card-account-title" class="box-t">Deu Branco</p>
-                                <div class="gold-description card-account-description"></div>
-                            </div>
-                            <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
-                            </div>
-                        </div>
-                        <div id="segundo-gale">
-                            <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
-                            </div>
-                            <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
-                            </div>
-                            <div class="deu-branco box">
-                                <p class="gold-title card-account-title" class="box-t">Deu Branco</p>
-                                <div class="gold-description card-account-description"></div>
-                            </div>
-                            <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
-                            </div>                        
-                        </div>
+                    <section class="newaccount newaccount4">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                            </span>
+                        <p>Clique em <strong>nova conta</strong> 
+                            para adicionar</p>
                     </section>
-                        <input type="button" value="Limpar" class="btn-clear btn-full">
+                        <input type="button" value="Limpar" class="btn-clean btn-full btn4" onclick="limparConta(4)">
                 </div>
             </section>
+            
             
         </main>
 

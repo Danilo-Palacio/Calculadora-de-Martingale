@@ -90,6 +90,13 @@
 
         text-align: center;
         cursor: pointer;}
+    .btn-full:hover{   }
+    .btn-full:active{
+        background-color: var(--green);
+        border:0;
+        color:var(--background);
+    }
+
  
  
 /* Segunda linha */
@@ -187,6 +194,8 @@
         padding: 0;
         margin: 0;}
     .header-card-set{
+        
+        
         color: var(--white);
         border-radius: 5px 5px 0 0;
         height: 1.667rem;
@@ -207,7 +216,9 @@
         justify-content: center;}
 /* Cartão */
     #cards-account{
+
         width: 18rem;
+        height: 19.063rem;
         
         border-radius: 0.333rem;
         
@@ -215,15 +226,15 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-end;}
+        align-items: center;}
     #account {
-        display: flex;
         flex-direction: row;
         column-gap:0.667rem;
         align-items: center;
         justify-content: center;
         
         margin: 1.333rem 1.333rem 1rem 1.333rem;}
+    .account1,.account2,.account3,.account4{display: none;}
     .box{
         display: flex;
         flex-direction: column;
@@ -274,17 +285,46 @@
         color: var(--white);}
     .red-description{
         background-color: var(--red);}
+    #account  span {
+        text-align: center;
+        font-size: 1.5rem;
+        color: var(--background);
+        opacity: 1;
+    }
+/* Nova Conta */
+.newaccount{
+    color: var(--white);
+    font-weight: 300;    
+    font-size: 0.9rem;
+    text-align: center;
 
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 10.933rem;
+    height: 5.867rem;
+    user-select: none;
+
+}
+.newaccount1,.newaccount2,.newaccount3,.newaccount4{display:flex}
+
+.newaccount > .material-symbols-outlined{
+    font-size: 2.933rem;
+}
 /* Botão Limpar */
 
-.btn-clear{
+ .btn-clean{    
     width: 4.667rem;
     height: 1.667rem;
     border-color: var(--white);
     color: var(--white);
 
     margin-right: 1.333rem;
-    margin-bottom: 10px;}
+    margin-bottom: 10px;
+    align-self: flex-end;}
+.btn1,.btn2,.btn3,.btn4{display:none;}
 
 
 
