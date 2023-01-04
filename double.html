@@ -22,7 +22,7 @@
                 <!-- Primeira linha -->
                     <div id="box-quantia">
 
-                        <input type="number" name="quantia" id="quantia"
+                        <input type="number" name="quantia" id="quantia" step="0.1" value="1.1"
                         min="1.1" placeholder="R$" required >
         
                         <input type="button" value="1/2" class="btn_quantia btn-full" id="btn_metade" onclick="cliqueMetade()">
@@ -30,14 +30,21 @@
                     </div>
                 <!-- Segunda Linha -->
                     <div id="box-escolha">
-                        <input type="button" value="2X" class="btn-outline  red btn-full">
-                        <input type="button" value="14X" class="btn-outline white btn-full">
-                        <input type="button" value="2X" class="btn-outline black btn-full">
+                        <input type="button" value="2X" class="btn-outline  red btn-full" onclick="adicionarVermelho()">
+
+                        <input type="button" value="14X" class="btn-outline white btn-full"onclick="adicionarBranco()">
+
+                        <input type="button" value="2X" class="btn-outline black btn-full" onclick="adicionarPreto()">
                     </div>
                 <!-- Terceira linha -->
                     <input type="button" value="Nova Conta" id="new_count" class="btn-full" onclick="btnNovaConta(0)">
               </div>
+              
             </div>
+            <select size="5" id="select"> 
+                
+              </select>
+
         </header>
 
         <!-- Main está ok -->
@@ -69,7 +76,7 @@
                         </div>
                         <div id="primeiro-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title box-t">Aposta</p>
+                                <p class="white-title card-account-title box-t">1º Gale</p>
                                 <span class="white-description card-account-description aposta-1-gale-2"></span>
                             </div>
                             <div class="ganhando box">
@@ -87,7 +94,7 @@
                         </div>
                         <div id="segundo-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title box-t">Aposta</p>
+                                <p class="white-title card-account-title box-t">2º Gale</p>
                                 <span class="white-description card-account-description aposta-1-gale-3"></span>
                             </div>
                             <div class="ganhando box">
@@ -141,7 +148,7 @@
                         </div>
                         <div id="primeiro-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <p class="white-title card-account-title" class="box-t">1º Gale</p>
                                 <span class="white-description card-account-description aposta-2-gale-2"></span>
                             </div>
                             <div class="ganhando box">
@@ -159,7 +166,7 @@
                         </div>
                         <div id="segundo-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <p class="white-title card-account-title" class="box-t">2º Gale</p>
                                 <span class="white-description card-account-description aposta-2-gale-3"></span>
                             </div>
                             <div class="ganhando box">
@@ -211,7 +218,7 @@
                         </div>
                         <div id="primeiro-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <p class="white-title card-account-title" class="box-t">1º Gale</p>
                                 <span class="white-description card-account-description aposta-3-gale-2"></span>
                             </div>
                             <div class="ganhando box">
@@ -229,7 +236,7 @@
                         </div>
                         <div id="segundo-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <p class="white-title card-account-title" class="box-t">2º Gale</p>
                                 <span class="white-description card-account-description aposta-3-gale-3"></span>
                             </div>
                             <div class="ganhando box">
@@ -283,7 +290,7 @@
                         </div>
                         <div id="primeiro-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <p class="white-title card-account-title" class="box-t">1º Gale</p>
                                 <span class="white-description card-account-description aposta-4-gale-2"></span>
                             </div>
                             <div class="ganhando box">
@@ -301,7 +308,7 @@
                         </div>
                         <div id="segundo-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
+                                <p class="white-title card-account-title" class="box-t">2º Gale</p>
                                 <span class="white-description card-account-description aposta-4-gale-3"></span>
                             </div>
                             <div class="ganhando box">
