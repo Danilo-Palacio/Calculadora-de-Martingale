@@ -1,108 +1,160 @@
-var inputQuantia = document.querySelector('#quantia');
-var newAccount1 = document.querySelector('.newaccount1')
-var newAccount2 = document.querySelector('.newaccount2')
-var newAccount3 = document.querySelector('.newaccount3')
-var newAccount4 = document.querySelector('.newaccount4')
+let inputQuantia = document.querySelector('#quantia');
+let newAccount1 = document.querySelector('.newaccount1')
+let newAccount2 = document.querySelector('.newaccount2')
+let newAccount3 = document.querySelector('.newaccount3')
+let newAccount4 = document.querySelector('.newaccount4')
+let sel = document.querySelector('#select')
+
+let autoRetirar = document.querySelector('#autoRetirar')
+
+function cleanAutoRetirar(){
+    autoRetirar.value = "0";
+}
+
+let emoji = []
+let contaDisponivel;
+
+let somaTotal = 0;
+
+var saldosDoCalculo = {
+    somaPreto :Number(0),
+    somaVermelho: Number(0),
+    somaBranco: Number(0),
+}
+
+let colors = {
+    adicionadoPreto: [],
+    adicionadoBranco: [],
+    adicionadoVermelho: [],
+}
 
 
-let conta;
-let saldoAposta = {};
 
-
-
+// Seção de botões 
 function cliqueMetade(){ // Botão de Metade
     inputQuantia.value = inputQuantia.value / 2 ;
 }
 function cliqueDobro(){ // Botão de Dobro
     inputQuantia.value = inputQuantia.value * 2 ;
 }
-function btnNovaConta(){ // Botão para fazer a conta e criar uma nova
-// faz o teste para ver qual está disponivel e envia para variavel num
+
+
+// faz o teste para ver qual campo de conta está disponivel
+//Retorna a conta que está disponivel para variavel contaDisponivel, esse dado é utilizado na função criarConta e repGale, e após utilizar o dado ele é apagado.
+function btnNovaConta(){ 
+
 
     if (newAccount1.style.display !== "none"){
-        conta = 1
-        finalizar();
+        contaDisponivel = 1
         criarConta();
         repGale();
         
-        conta = 0
+        contaDisponivel = 0
 
     }else if (newAccount2.style.display !== "none"){
-        conta = 2
-        finalizar()
+        contaDisponivel = 2
         criarConta();
         repGale();
         
-        conta = 0
+        contaDisponivel = 0
 
     }else if (newAccount3.style.display !== "none"){
-        conta = 3
-        finalizar();
+        contaDisponivel = 3
         criarConta();
         repGale();
-        conta = 0
+        contaDisponivel = 0
 
     }else if (newAccount4.style.display !== "none"){
-        conta = 4
-        finalizar();
+        contaDisponivel = 4
         criarConta();
         repGale();
-        conta = 0
+        contaDisponivel = 0
 
     }else {
         alert('limpe um dos campos para adicionar novas contas')
     }
 }
+function calcular(){// Botão Calcular
+
+    if(colors.adicionadoPreto.length > 0 && colors.adicionadoVermelho.length > 0){
+        alert('Não é possivel adicionar uma Preta e uma Vermelha')
+
+        
+        
+    }else if(colors.adicionadoPreto.length == 0 && colors.adicionadoVermelho.length == 0 && colors.adicionadoBranco.length == 0){
+        alert("Escolha uma Cor")
+
+    }else{
+
+        for ( let pos in colors.adicionadoPreto){
+            saldosDoCalculo.somaPreto += colors.adicionadoPreto[pos]
+            }
+            for ( let pos in colors.adicionadoBranco){
+                saldosDoCalculo.somaBranco += colors.adicionadoBranco[pos]
+            }
+            for ( let pos in colors.adicionadoVermelho){
+                saldosDoCalculo.somaVermelho += colors.adicionadoVermelho[pos]
+            }
+
+            somaTotal = saldosDoCalculo.somaBranco + saldosDoCalculo.somaPreto + saldosDoCalculo.somaVermelho
+
+            btnNovaConta()
+            limparPedras()
+
+            
+
+            saldosDoCalculo.somaBranco = 0
+            saldosDoCalculo.somaPreto = 0
+            saldosDoCalculo.somaVermelho = 0
+    }
+}
+
 
 function criarConta(){//utiliza a variavel num para mostrar os campos
 
-    let btnClean = document.querySelector(`.btn${conta}`)
-    let account = document.querySelector(`.account${conta}`)
-    let headerCardTitle = document.querySelector(`.title${conta}`)
-    let headerCardMultiple = document.querySelector(`.multiple${conta}`)
-    let newAccount = document.querySelector(`.newaccount${conta}`)
+    let btnClean = document.querySelector(`.btn${contaDisponivel}`)
+    let account = document.querySelector(`.account${contaDisponivel}`)
+    let headerCardTitle = document.querySelector(`.title${contaDisponivel}`)
+    let headerCardMultiple = document.querySelector(`.multiple${contaDisponivel}`)
+    let newAccount = document.querySelector(`.newaccount${contaDisponivel}`)
 
     account.style.display = "flex";
     btnClean.style.display = "inline-block";
-    headerCardTitle.innerHTML = `Conta ${conta}`;
-    headerCardMultiple.innerHTML = "1.5X";
+    headerCardTitle.innerHTML = `Conta ${contaDisponivel}`;
+    headerCardMultiple.innerHTML = `${emoji}`;
+    headerCardMultiple.style.backgroundColor = "hsla(0, 0%, 100%, 0.5)"
     newAccount.style.display = "none";
 }
-function repGale(){ // Faz a repetição dos Gales com base na conta
+function repGale(){ // Faz a repetição nos Gales e ativa a função somaGale, utiliza os dados da contaDisponivel
 
     for (let i = 1; i <=3 ; i++) {
 
         if (i == 1){
-
             somaGale(1)
-
         }else if (i == 2){
-
             somaGale(2)
-
         }else {
-
             somaGale(3)
-
         }
     }
 }
-function somaGale(i){ // Faz o calculo dos Martingales
-    let aposta = document.querySelector(`.aposta-${conta}-gale-${i}`)
-    let ganhou = document.querySelector(`.ganhou-${conta}-gale-${i}`)
-    let perdeu = document.querySelector(`.perdeu-${conta}-gale-${i}`)
-    let branco = document.querySelector(`.branco-${conta}-gale-${i}`)
 
-    let contaAposta = saldoAposta * i; // Quanto tem que apostar
+function somaGale(i){ // Faz o calculo dos Martingales
+    let aposta = document.querySelector(`.aposta-${contaDisponivel}-gale-${i}`)
+    let ganhou = document.querySelector(`.ganhou-${contaDisponivel}-gale-${i}`)
+    let perdeu = document.querySelector(`.perdeu-${contaDisponivel}-gale-${i}`)
+    let branco = document.querySelector(`.branco-${contaDisponivel}-gale-${i}`)
+
+    let contaAposta = somaTotal * i; // Quanto apostou
         contaAposta = contaAposta.toFixed(1);
 
-    let contaGanhou = saldoAposta * i * 2;// Se ganhar
+    let contaGanhou = (somaTotal - saldosDoCalculo.somaBranco ) * i * 2;// Se der a cor
         contaGanhou = contaGanhou.toFixed(1);
 
-    let valorBranco = saldoAposta * 14; // Se der branco
+    let valorBranco = saldosDoCalculo.somaBranco * 14; // Se der branco
         valorBranco = valorBranco.toFixed(1);
 
-    let contaPerdeu = saldoAposta * i; // Se perder
+    let contaPerdeu = somaTotal * i; // Se perder
         contaPerdeu = contaPerdeu.toFixed(1);
 
 
@@ -114,9 +166,66 @@ function somaGale(i){ // Faz o calculo dos Martingales
 }
 
 
+// adicionar as pedras
+function adicionarPreto(){
+
+    if (inputQuantia.value == 0 ){
+        alert('Valor Invalido')
+    }else{
+        colors.adicionadoPreto.push(Number(inputQuantia.value))
+
+        var option = document.createElement('option')
+        option.text=`Adicionado R$${inputQuantia.value} ao \u{26AB}.`
+        sel.appendChild(option)
+
+        emoji += `\u{26AB}`
+    }
+}
+function adicionarBranco(){
+
+    if (inputQuantia.value == 0 ){
+        alert('Valor Invalido')
+    }else{
+        colors.adicionadoBranco.push(Number(inputQuantia.value))
+
+        var option = document.createElement('option')
+        option.text=`Adicionado R$${inputQuantia.value} ao \u{26AA}.`
+        sel.appendChild(option)
+
+        emoji += `\u{26AA}`
+    }
+}
+function adicionarVermelho(){
+
+    if (inputQuantia.value == 0 ){
+        alert('Valor Invalido')
+    }else{
+        colors.adicionadoVermelho.push(Number(inputQuantia.value))
+
+        var option = document.createElement('option')
+        option.text=`Adicionado R$${inputQuantia.value} ao \u{1F534}.`
+        sel.appendChild(option)
+
+        emoji += `\u{1F534}`
+    } 
+}
 
 
+function limparPedras(){// botão limpar pedras
 
+    colors.adicionadoBranco = 0
+    colors.adicionadoPreto = 0
+    colors.adicionadoVermelho = 0
+
+    sel.innerHTML = ' '
+
+    colors.adicionadoBranco = []
+    colors.adicionadoPreto = []
+    colors.adicionadoVermelho = []
+
+    inputQuantia.value = 1.1;
+    emoji = ''
+}
 function limparConta(num){ // botão de limpar a conta
 
     function buscaLimparConta(){// função para limpar a conta
@@ -125,6 +234,7 @@ function limparConta(num){ // botão de limpar a conta
         headerCardTitle.innerHTML = " ";
         headerCardMultiple.innerHTML = " ";
         newAccount.style.display = "flex";
+        headerCardMultiple.style.backgroundColor = "#1A242D"
     }
     let btnClean = document.querySelector(`.btn${num}`)
     let account = document.querySelector(`.account${num}`)
@@ -143,79 +253,3 @@ function limparConta(num){ // botão de limpar a conta
     }
 }
 
-
-
-
-// Teste Conta Double
-
-let sel = document.querySelector('#select')
-let res = document.querySelector('#resultado')
-
-var adicionadoPreto = [];
-var adicionadoBranco = [];
-var adicionadoVermelho = [];
-
-
-function adicionarPreto(){
-
-    if (inputQuantia.value == 0 ){
-        alert('Valor Invalido')
-    }else{
-        adicionadoPreto.push(Number(inputQuantia.value))
-
-        var option = document.createElement('option')
-        option.text=`Adicionado R$${inputQuantia.value} ao \u{26AB}.`
-        sel.appendChild(option)
-        res.innerHTML = ' '
-    }
-}
-function adicionarBranco(){
-
-    if (inputQuantia.value == 0 ){
-        alert('Valor Invalido')
-    }else{
-        adicionadoBranco.push(Number(inputQuantia.value))
-
-        var option = document.createElement('option')
-        option.text=`Adicionado R$${inputQuantia.value} ao \u{26AA}.`
-        sel.appendChild(option)
-        res.innerHTML = ' '
-    }
-}
-function adicionarVermelho(){
-
-    if (inputQuantia.value == 0 ){
-        alert('Valor Invalido')
-    }else{
-        adicionadoVermelho.push(Number(inputQuantia.value))
-
-        var option = document.createElement('option')
-        option.text=`Adicionado R$${inputQuantia.value} ao \u{1F534}.`
-        sel.appendChild(option)
-        res.innerHTML = ' '
-    } 
-}
-
-
-function finalizar(){
-
-    if(adicionadoPreto.length==0 && adicionadoBranco.length==0 && adicionadoVermelho.length==0){
-        alert('Adicione valores antes de finalizar!')
-    }else{
-        let somaPreto = Number(0);
-        let somaBranco = Number(0);
-        let somaVermelho = Number(0);
-
-        for ( let pos in adicionadoPreto){
-            somaPreto += adicionadoPreto[pos]
-        }
-        for ( let pos in adicionadoBranco){
-            somaBranco += adicionadoBranco[pos]
-        }
-        for ( let pos in adicionadoVermelho){
-            somaVermelho += adicionadoVermelho[pos]
-        }
-
-        saldoAposta = somaVermelho+somaBranco+somaPreto;
-    }
-}

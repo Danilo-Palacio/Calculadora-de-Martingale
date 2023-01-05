@@ -140,7 +140,12 @@
         font-size: 0.7em;
         width: 9.015rem;
         height: 2.333rem ;
-        padding: 0;}
+        padding: 0;
+    }
+    #auto-retirar::-webkit-inner-spin-button,#auto-retirar::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
 #btn-clean{
     height: 2.333rem;
     background-color: transparent;

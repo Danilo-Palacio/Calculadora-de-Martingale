@@ -20,8 +20,7 @@
               <div id="infos">
                 <!-- Primeira linha -->
                     <div id="box-quantia">
-        
-                        <input type="number" name="quantia" id="quantia"
+                        <input type="number" name="quantia" id="quantia" step="0.1" value="1.1"
                         min="1.1" placeholder="R$" required >
         
                         <input type="button" value="1/2" class="btn_quantia btn-full" id="btn_metade" onclick="cliqueMetade()">
@@ -29,8 +28,9 @@
                     </div>
                 <!-- Segunda Linha -->
                     <div id="box-auto-retirar">
-                        <input type="number" name="auto-retirar" id="auto-retirar" step="0.1" placeholder="Auto-retirar" required>
-                        <input type="button" value="X " id="btn-clean" class="btn-full">
+                        <input type="number" name="auto-retirar" id="auto-retirar" value="0" step="0.1" placeholder="Auto-retirar" required>
+
+                        <input type="button" value="X " id="btn-clean" class="btn-full" onclick="cleanAutoRetirar()">
                     </div>
                 <!-- Terceira linha -->
                 <input type="button" value="Nova Conta" id="new_count" class="btn-full" onclick="btnNovaConta(0)">

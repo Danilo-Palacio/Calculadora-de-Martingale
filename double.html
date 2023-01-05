@@ -30,14 +30,17 @@
                     </div>
                 <!-- Segunda Linha -->
                     <div id="box-escolha">
-                        <input type="button" value="2X" class="btn-outline  red btn-full" onclick="adicionarVermelho()">
+                        <input type="button" value="X2" class="btn-outline  red btn-full" onclick="adicionarVermelho()">
 
-                        <input type="button" value="14X" class="btn-outline white btn-full"onclick="adicionarBranco()">
+                        <input type="button" value="X14" class="btn-outline white btn-full"onclick="adicionarBranco()">
 
-                        <input type="button" value="2X" class="btn-outline black btn-full" onclick="adicionarPreto()">
+                        <input type="button" value="X2" class="btn-outline black btn-full" onclick="adicionarPreto()">
                     </div>
                 <!-- Terceira linha -->
-                    <input type="button" value="Nova Conta" id="new_count" class="btn-full" onclick="btnNovaConta(0)">
+                    <div>
+                        <input type="button" value="Limpar" id="new_count" class="btn-full" onclick="limparPedras()">
+                        <input type="button" value="Calcular" id="new_count" class="btn-full" onclick="calcular()">
+                    </div>
               </div>
               
             </div>
@@ -62,7 +65,7 @@
                                 <span class="white-description card-account-description aposta-1-gale-1"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title box-t">Ganhou</p>
+                                <p class="green-title card-account-title box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-1-gale-1"></span>
                             </div>
                             <div class="deu-branco box">
@@ -70,7 +73,7 @@
                                 <span class="gold-description card-account-description branco-1-gale-1"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title box-t">Perdeu</p>
+                                <p class="red-title card-account-title box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-1-gale-1"></span>
                             </div>
                         </div>
@@ -80,7 +83,7 @@
                                 <span class="white-description card-account-description aposta-1-gale-2"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title box-t">Ganhou</p>
+                                <p class="green-title card-account-title box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-1-gale-2"></span>
                             </div>
                             <div class="deu-branco box">
@@ -88,7 +91,7 @@
                                 <span class="gold-description card-account-description branco-1-gale-2"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title box-t">Perdeu</p>
+                                <p class="red-title card-account-title box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-1-gale-2"></span>
                             </div>
                         </div>
@@ -98,7 +101,7 @@
                                 <span class="white-description card-account-description aposta-1-gale-3"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title box-t">Ganhou</p>
+                                <p class="green-title card-account-title box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-1-gale-3"></span>
                             </div>
                             <div class="deu-branco box">
@@ -106,7 +109,7 @@
                                 <span class="gold-description card-account-description branco-1-gale-3"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title box-t">Perdeu</p>
+                                <p class="red-title card-account-title box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-1-gale-3"></span>
                             </div>                    
                         </div>
@@ -115,7 +118,7 @@
                         <span class="material-symbols-outlined">
                             add_circle
                             </span>
-                        <p>Clique em <strong>nova conta</strong> 
+                        <p>Clique em <strong>Calcular</strong> 
                             para adicionar</p>
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn1" onclick="limparConta(1)">
@@ -134,7 +137,7 @@
                                 <span class="white-description card-account-description aposta-2-gale-1"> </span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <p class="green-title card-account-title" class="box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-2-gale-1"></span>
                             </div>
                             <div class="deu-branco box">
@@ -142,7 +145,7 @@
                                 <span class="gold-description card-account-description branco-2-gale-1"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-2-gale-1"></span>
                             </div>
                         </div>
@@ -152,7 +155,7 @@
                                 <span class="white-description card-account-description aposta-2-gale-2"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <p class="green-title card-account-title" class="box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-2-gale-2"></span>
                             </div>
                             <div class="deu-branco box">
@@ -160,7 +163,7 @@
                                 <span class="gold-description card-account-description branco-2-gale-2"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-2-gale-2"></span>
                             </div>
                         </div>
@@ -170,7 +173,7 @@
                                 <span class="white-description card-account-description aposta-2-gale-3"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <p class="green-title card-account-title" class="box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-2-gale-3"></span>
                             </div>
                             <div class="deu-branco box">
@@ -178,14 +181,14 @@
                                 <span class="gold-description card-account-description branco-2-gale-3"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-2-gale-3"></span>
                             </div>                        
                         </div>
                     </section>
                     <section class="newaccount newaccount2">
                         <span class="material-symbols-outlined"> add_circle </span>
-                        <p>Clique em <strong>nova conta</strong> 
+                        <p>Clique em <strong>Calcular</strong> 
                             para adicionar</p>
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn2" onclick="limparConta(2)">
@@ -204,7 +207,7 @@
                                 <span class="white-description card-account-description aposta-3-gale-1"> </span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <p class="green-title card-account-title" class="box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-3-gale-1"></span>
                             </div>
                             <div class="deu-branco box">
@@ -212,7 +215,7 @@
                                 <span class="gold-description card-account-description branco-3-gale-1"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-3-gale-1"></span>
                             </div>
                         </div>
@@ -222,7 +225,7 @@
                                 <span class="white-description card-account-description aposta-3-gale-2"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <p class="green-title card-account-title" class="box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-3-gale-2"></span>
                             </div>
                             <div class="deu-branco box">
@@ -230,7 +233,7 @@
                                 <span class="gold-description card-account-description branco-3-gale-2"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-3-gale-2"></span>
                             </div>
                         </div>
@@ -240,7 +243,7 @@
                                 <span class="white-description card-account-description aposta-3-gale-3"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
+                                <p class="green-title card-account-title" class="box-t">Na cor</p>
                                 <span class="green-description card-account-description ganhou-3-gale-3"></span>
                             </div>
                             <div class="deu-branco box">
@@ -248,7 +251,7 @@
                                 <span class="gold-description card-account-description branco-3-gale-3"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-3-gale-3"></span>
                             </div>                        
                         </div>
@@ -257,7 +260,7 @@
                         <span class="material-symbols-outlined">
                             add_circle
                             </span>
-                        <p>Clique em <strong>nova conta</strong> 
+                        <p>Clique em <strong>Calcular</strong> 
                             para adicionar</p>
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn3" onclick="limparConta(3)">
@@ -284,7 +287,7 @@
                                 <span class="gold-description card-account-description branco-4-gale-1"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-4-gale-1"></span>
                             </div>
                         </div>
@@ -302,7 +305,7 @@
                                 <span class="gold-description card-account-description branco-4-gale-2"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-4-gale-2"></span>
                             </div>
                         </div>
@@ -320,7 +323,7 @@
                                 <span class="gold-description card-account-description branco-4-gale-3"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
                                 <span class="red-description card-account-description perdeu-4-gale-3"></span>
                             </div>                        
                         </div>
@@ -329,7 +332,7 @@
                         <span class="material-symbols-outlined">
                             add_circle
                             </span>
-                        <p>Clique em <strong>nova conta</strong> 
+                        <p>Clique em <strong>Calcular</strong> 
                             para adicionar</p>
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn4" onclick="limparConta(4)">
