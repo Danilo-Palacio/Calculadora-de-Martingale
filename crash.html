@@ -28,12 +28,12 @@
                     </div>
                 <!-- Segunda Linha -->
                     <div id="box-auto-retirar">
-                        <input type="number" name="auto-retirar" id="auto-retirar" value="0" step="0.1" placeholder="Auto-retirar" required>
+                        <input type="number" name="auto-retirar" id="auto-retirar" value="" step="0.1" placeholder="Auto-retirar" required>
 
                         <input type="button" value="X " id="btn-clean" class="btn-full" onclick="cleanAutoRetirar()">
                     </div>
                 <!-- Terceira linha -->
-                <input type="button" value="Nova Conta" id="new_count" class="btn-full" onclick="btnNovaConta(0)">
+                <input type="button" value="Calcular" id="new_count" class="btn-full" onclick="CalcularCrash()">
         
               </div>
             </div>
@@ -48,65 +48,62 @@
                 </div>
                 <div id="cards-account">
                     <section id="account" class="account1">
-                        <div class="sem-gale">
+                        <div class="sem-gale ">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title box-t">Aposta</p>
+                                <span class="white-description card-account-description aposta-1-gale-1"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-1-gale-1"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-1-gale-1"></span>
                             </div>
                         </div>
                         <div id="primeiro-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title box-t">1º Gale</p>
+                                <span class="white-description card-account-description aposta-1-gale-2"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-1-gale-2"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-1-gale-2"></span>
                             </div>
                         </div>
                         <div id="segundo-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title box-t">2º Gale</p>
+                                <span class="white-description card-account-description aposta-1-gale-3"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-1-gale-3"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
-                            </div>                        
+                                <p class="red-title card-account-title box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-1-gale-3"></span>
+                            </div>                    
                         </div>
                     </section>
                     <section class="newaccount newaccount1">
                         <span class="material-symbols-outlined">
                             add_circle
-                            </span>
-                        <p>Clique em <strong>nova conta</strong> 
-                            para adicionar</p>
+                        </span>
+                        <p>
+                            Clique em <strong>Calcular</strong> 
+                            para adicionar
+                        </p>
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn1" onclick="limparConta(1)">
                 </div>
             </section>
-
-
-
-
-            
-            <section id="card" class="card2"> 
+            <section id="card"class="card2">
                 <div class="header-card">
                     <p class="header-card-title header-card-set title2"> Conta 2 </p>
                     <p class="header-card-multiple header-card-set multiple2"> </p>
@@ -115,56 +112,56 @@
                     <section id="account" class="account2">
                         <div class="sem-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title box-t">Aposta</p>
+                                <span class="white-description card-account-description aposta-2-gale-1"> </span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title" class="box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-2-gale-1"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-2-gale-1"></span>
                             </div>
                         </div>
                         <div id="primeiro-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title" class="box-t">1º Gale</p>
+                                <span class="white-description card-account-description aposta-2-gale-2"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title" class="box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-2-gale-2"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-2-gale-2"></span>
                             </div>
                         </div>
                         <div id="segundo-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title" class="box-t">2º Gale</p>
+                                <span class="white-description card-account-description aposta-2-gale-3"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title" class="box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-2-gale-3"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
+                                <span class="red-description card-account-description perdeu-2-gale-3"></span>
                             </div>                        
                         </div>
                     </section>
                     <section class="newaccount newaccount2">
                         <span class="material-symbols-outlined"> add_circle </span>
-                        <p>Clique em <strong>nova conta</strong> 
+                        <p>Clique em <strong>Calcular</strong> 
                             para adicionar</p>
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn2" onclick="limparConta(2)">
                 </div>
             </section>
-            <section id="card" class="card3">
+            <section id="card"class="card3">
                 <div class="header-card">
                     <p class="header-card-title header-card-set title3"> Conta 3 </p>
                     <p class="header-card-multiple header-card-set multiple3">  </p>
@@ -173,44 +170,44 @@
                     <section id="account" class="account3">
                         <div class="sem-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title box-t">Aposta</p>
+                                <span class="white-description card-account-description aposta-3-gale-1"> </span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title" class="box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-3-gale-1"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
+                                <span class="red-description card-account-description perdeu-3-gale-1"></span>
                             </div>
                         </div>
                         <div id="primeiro-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title" class="box-t">1º Gale</p>
+                                <span class="white-description card-account-description aposta-3-gale-2"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title" class="box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-3-gale-2"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Se perder</p>
+                                <span class="red-description card-account-description perdeu-3-gale-2"></span>
                             </div>
                         </div>
                         <div id="segundo-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title" class="box-t">2º Gale</p>
+                                <span class="white-description card-account-description aposta-3-gale-3"></span>
                             </div>
                             <div class="ganhando box">
-                                <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <p class="green-title card-account-title" class="box-t">Passou</p>
+                                <span class="green-description card-account-description ganhou-3-gale-3"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-3-gale-3"></span>
                             </div>                        
                         </div>
                     </section>
@@ -218,13 +215,13 @@
                         <span class="material-symbols-outlined">
                             add_circle
                             </span>
-                        <p>Clique em <strong>nova conta</strong> 
+                        <p>Clique em <strong>Calcular</strong> 
                             para adicionar</p>
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn3" onclick="limparConta(3)">
                 </div>
             </section>
-            <section id="card" class="card4">
+            <section id="card"class="card4">
                 <div class="header-card">
                     <p class="header-card-title header-card-set title4"> Conta 4 </p>
                     <p class="header-card-multiple header-card-set multiple4">  </p>
@@ -233,44 +230,44 @@
                     <section id="account" class="account4">
                         <div class="sem-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title box-t">Aposta</p>
+                                <span class="white-description card-account-description aposta-4-gale-1"> </span>
                             </div>
                             <div class="ganhando box">
                                 <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <span class="green-description card-account-description ganhou-4-gale-1"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-4-gale-1"></span>
                             </div>
                         </div>
                         <div id="primeiro-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title" class="box-t">1º Gale</p>
+                                <span class="white-description card-account-description aposta-4-gale-2"></span>
                             </div>
                             <div class="ganhando box">
                                 <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <span class="green-description card-account-description ganhou-4-gale-2"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-4-gale-2"></span>
                             </div>
                         </div>
                         <div id="segundo-gale">
                             <div class="aposta box">
-                                <p class="white-title card-account-title" class="box-t">Aposta</p>
-                                <div class="white-description card-account-description"></div>
+                                <p class="white-title card-account-title" class="box-t">2º Gale</p>
+                                <span class="white-description card-account-description aposta-4-gale-3"></span>
                             </div>
                             <div class="ganhando box">
                                 <p class="green-title card-account-title" class="box-t">Ganhando</p>
-                                <div class="green-description card-account-description"></div>
+                                <span class="green-description card-account-description ganhou-4-gale-3"></span>
                             </div>
                             <div class="perdendo box">
-                                <p class="red-title card-account-title" class="box-t">Perdendo</p>
-                                <div class="red-description card-account-description"></div>
+                                <p class="red-title card-account-title" class="box-t">Crashou</p>
+                                <span class="red-description card-account-description perdeu-4-gale-3"></span>
                             </div>                        
                         </div>
                     </section>
@@ -278,7 +275,7 @@
                         <span class="material-symbols-outlined">
                             add_circle
                             </span>
-                        <p>Clique em <strong>nova conta</strong> 
+                        <p>Clique em <strong>Calcular</strong> 
                             para adicionar</p>
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn4" onclick="limparConta(4)">
@@ -299,8 +296,8 @@
             </section>
         </footer>
         
-    </section>
-    
-        <script src="scripts/scripts.js"></script>
+    <section>    
+        <script src="scripts/scripts.js">
+    </script>
 </body>
 </html>

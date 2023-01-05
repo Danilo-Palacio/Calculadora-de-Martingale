@@ -4,30 +4,29 @@ let newAccount2 = document.querySelector('.newaccount2')
 let newAccount3 = document.querySelector('.newaccount3')
 let newAccount4 = document.querySelector('.newaccount4')
 let sel = document.querySelector('#select')
-
-let autoRetirar = document.querySelector('#autoRetirar')
-
-function cleanAutoRetirar(){
-    autoRetirar.value = "0";
-}
-
-let emoji = []
+let input_autoRetirar = document.querySelector('#auto-retirar')
+let emojiDasPedras = []
 let contaDisponivel;
-
 let somaTotal = 0;
-
-var saldosDoCalculo = {
+let saldosDoCalculo = {
     somaPreto :Number(0),
     somaVermelho: Number(0),
     somaBranco: Number(0),
 }
-
 let colors = {
     adicionadoPreto: [],
     adicionadoBranco: [],
     adicionadoVermelho: [],
 }
 
+
+
+
+
+
+function cleanAutoRetirar(){
+    input_autoRetirar.value = "";
+}
 
 
 // Seção de botões 
@@ -40,41 +39,47 @@ function cliqueDobro(){ // Botão de Dobro
 
 
 // faz o teste para ver qual campo de conta está disponivel
-//Retorna a conta que está disponivel para variavel contaDisponivel, esse dado é utilizado na função criarConta e repGale, e após utilizar o dado ele é apagado.
+//Retorna a conta que está disponivel para variavel contaDisponivel, esse dado é utilizado na função criarConta e repeticaoDeGale, e após utilizar o dado ele é apagado.
 function btnNovaConta(){ 
 
 
     if (newAccount1.style.display !== "none"){
         contaDisponivel = 1
+
         criarConta();
-        repGale();
+        repeticaoDeGale();
+        cleanAutoRetirar();
         
         contaDisponivel = 0
 
     }else if (newAccount2.style.display !== "none"){
         contaDisponivel = 2
         criarConta();
-        repGale();
+        repeticaoDeGale();
+        cleanAutoRetirar();
         
         contaDisponivel = 0
 
     }else if (newAccount3.style.display !== "none"){
         contaDisponivel = 3
         criarConta();
-        repGale();
+        repeticaoDeGale();
+        cleanAutoRetirar();
+
         contaDisponivel = 0
 
     }else if (newAccount4.style.display !== "none"){
         contaDisponivel = 4
         criarConta();
-        repGale();
+        repeticaoDeGale();
+        cleanAutoRetirar();
         contaDisponivel = 0
 
     }else {
         alert('limpe um dos campos para adicionar novas contas')
     }
 }
-function calcular(){// Botão Calcular
+function btn_calcular(){// TESTE DE COR || SOMENTE DOUBLE!
 
     if(colors.adicionadoPreto.length > 0 && colors.adicionadoVermelho.length > 0){
         alert('Não é possivel adicionar uma Preta e uma Vermelha')
@@ -109,8 +114,7 @@ function calcular(){// Botão Calcular
     }
 }
 
-
-function criarConta(){//utiliza a variavel num para mostrar os campos
+function criarConta(){//utiliza a variavel contaDisponivel para mostrar os campos
 
     let btnClean = document.querySelector(`.btn${contaDisponivel}`)
     let account = document.querySelector(`.account${contaDisponivel}`)
@@ -121,11 +125,11 @@ function criarConta(){//utiliza a variavel num para mostrar os campos
     account.style.display = "flex";
     btnClean.style.display = "inline-block";
     headerCardTitle.innerHTML = `Conta ${contaDisponivel}`;
-    headerCardMultiple.innerHTML = `${emoji}`;
+    headerCardMultiple.innerHTML = `${emojiDasPedras}`;
     headerCardMultiple.style.backgroundColor = "hsla(0, 0%, 100%, 0.5)"
     newAccount.style.display = "none";
 }
-function repGale(){ // Faz a repetição nos Gales e ativa a função somaGale, utiliza os dados da contaDisponivel
+function repeticaoDeGale(){ // Faz a repetição nos Gales e ativa a função somaGale, utiliza os dados da contaDisponivel
 
     for (let i = 1; i <=3 ; i++) {
 
@@ -166,49 +170,54 @@ function somaGale(i){ // Faz o calculo dos Martingales
 }
 
 
-// adicionar as pedras
-function adicionarPreto(){
+// Objeto com as funções que mostram qual foi a pedra escolhida
+let mostrarPedras = {
 
-    if (inputQuantia.value == 0 ){
-        alert('Valor Invalido')
-    }else{
-        colors.adicionadoPreto.push(Number(inputQuantia.value))
+    adicionarPreto(){
 
-        var option = document.createElement('option')
-        option.text=`Adicionado R$${inputQuantia.value} ao \u{26AB}.`
-        sel.appendChild(option)
-
-        emoji += `\u{26AB}`
+        if (inputQuantia.value == 0 ){
+            alert('Valor Invalido')
+        }else{
+            colors.adicionadoPreto.push(Number(inputQuantia.value))
+    
+            var option = document.createElement('option')
+            option.text=`Adicionado R$${inputQuantia.value} ao \u{26AB}.`
+            sel.appendChild(option)
+    
+            emojiDasPedras += `\u{26AB}`
+        }
+    },
+    adicionarBranco(){
+    
+        if (inputQuantia.value == 0 ){
+            alert('Valor Invalido')
+        }else{
+            colors.adicionadoBranco.push(Number(inputQuantia.value))
+    
+            var option = document.createElement('option')
+            option.text=`Adicionado R$${inputQuantia.value} ao \u{26AA}.`
+            sel.appendChild(option)
+    
+            emojiDasPedras += `\u{26AA}`
+        }
+    },
+    adicionarVermelho(){
+    
+        if (inputQuantia.value == 0 ){
+            alert('Valor Invalido')
+        }else{
+            colors.adicionadoVermelho.push(Number(inputQuantia.value))
+    
+            var option = document.createElement('option')
+            option.text=`Adicionado R$${inputQuantia.value} ao \u{1F534}.`
+            sel.appendChild(option)
+    
+            emojiDasPedras += `\u{1F534}`
+        } 
     }
+
 }
-function adicionarBranco(){
 
-    if (inputQuantia.value == 0 ){
-        alert('Valor Invalido')
-    }else{
-        colors.adicionadoBranco.push(Number(inputQuantia.value))
-
-        var option = document.createElement('option')
-        option.text=`Adicionado R$${inputQuantia.value} ao \u{26AA}.`
-        sel.appendChild(option)
-
-        emoji += `\u{26AA}`
-    }
-}
-function adicionarVermelho(){
-
-    if (inputQuantia.value == 0 ){
-        alert('Valor Invalido')
-    }else{
-        colors.adicionadoVermelho.push(Number(inputQuantia.value))
-
-        var option = document.createElement('option')
-        option.text=`Adicionado R$${inputQuantia.value} ao \u{1F534}.`
-        sel.appendChild(option)
-
-        emoji += `\u{1F534}`
-    } 
-}
 
 
 function limparPedras(){// botão limpar pedras
@@ -224,7 +233,7 @@ function limparPedras(){// botão limpar pedras
     colors.adicionadoVermelho = []
 
     inputQuantia.value = 1.1;
-    emoji = ''
+    emojiDasPedras = ''
 }
 function limparConta(num){ // botão de limpar a conta
 
@@ -253,3 +262,12 @@ function limparConta(num){ // botão de limpar a conta
     }
 }
 
+//Crash
+
+var resultadoContaCrash= 0;
+
+function CalcularCrash(){
+    resultadoContaCrash = inputQuantia.value * input_autoRetirar.value 
+    btnNovaConta();
+    cleanAutoRetirar();
+}
