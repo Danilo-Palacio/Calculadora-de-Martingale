@@ -483,17 +483,17 @@ footer{
 }
 
 .photoquatro{
-    display: block;
+    display: none;
     top: 10%;
     left: 24%;
 }
 .photocinco{
-    display: block;
+    display: none;
     top: 20%;
     left: 14%;
 }
 .photoseis{
-    display: block;
+    display: none;
     top: 27%;
     left: 15%;
 }
