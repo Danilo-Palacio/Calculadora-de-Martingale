@@ -367,9 +367,9 @@ function cliqueEmCalcular(){
 //Modal
 
 let modal = {
-    modal1 : document.querySelector('.modalum'),
-    modal2 : document.querySelector('.modaldois'),
-    modal3 : document.querySelector('.modaltres'),
+    fade1 : document.querySelector('.fadeum'),
+    fade2 : document.querySelector('.fadedois'),
+    fade3 : document.querySelector('.fadetres'),
     photo1 : document.querySelector('.photoum'),
     photo2 : document.querySelector('.photodois'),
     photo3 : document.querySelector('.phototres'),
@@ -384,12 +384,10 @@ let modal = {
 
 let modalTutoriais = {
     Desktop : {
-        tutorial1(){
-            modal.photo1.setAttribute('src','imagens/tutoriais/passo1desktop.svg');
-            
-            modal.modal1.style.display = "inline-block";
-            modal.modal1.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 4%,39% 4%,39% 57%,10% 58%, 10% 100%, 100% 100%,100% 0%)";
-            modal.modal1.style.transition = '0.5s';
+        tutorial1(){            
+            modal.fade1.style.display = "inline-block";
+            modal.fade1.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 4%,39% 4%,39% 57%,10% 58%, 10% 100%, 100% 100%,100% 0%)";
+            modal.fade1.style.transition = '0.5s';
     
             modal.photo1.style.display = 'block';
             modal.photo2.style.display = 'block';
@@ -399,7 +397,7 @@ let modalTutoriais = {
             modal.photo3.style.transition = '0.5s';
         },
         limparTutorial1(){
-            modal.modal1.style.display = "none";
+            modal.fade1.style.display = "none";
         
             modal.photo1.style.display = 'none';
             modal.photo2.style.display = 'none';
@@ -409,9 +407,9 @@ let modalTutoriais = {
         },
         tutorial2(){
     
-            modal.modal2.style.display = "inline-block";
-            modal.modal2.style.clipPath = "polygon(0% 0%, 0% 100%,43% 100%,43% 1%,  67% 1%,67% 50%,10% 50%,10% 100%,100% 100%, 100% 0%)";
-            modal.modal2.style.transition = '0.5s';
+            modal.fade2.style.display = "inline-block";
+            modal.fade2.style.clipPath = "polygon(0% 0%, 0% 100%,43% 100%,43% 1%,  67% 1%,67% 50%,10% 50%,10% 100%,100% 100%, 100% 0%)";
+            modal.fade2.style.transition = '0.5s';
         
             modal.photo4.style.display = 'block';
             modal.photo5.style.display = 'block';
@@ -423,7 +421,7 @@ let modalTutoriais = {
             modal.photo7.style.transition = '0.5s';
         },
         limparTutorial2(){
-            modal.modal2.style.display = "none";
+            modal.fade2.style.display = "none";
     
             modal.photo4.style.display = 'none';
             modal.photo5.style.display = 'none';
@@ -433,9 +431,9 @@ let modalTutoriais = {
             modalTutoriais.Desktop.tutorial3()
         },
         tutorial3(){
-            modal.modal3.style.display = "inline-block";
-            modal.modal3.style.clipPath = "polygon(0% 0%, 0% 100%,43% 100%,43% 1%,  67% 1%,67% 50%,10% 50%,10% 100%,100% 100%, 100% 0%)";
-            modal.modal3.style.transition = '0.5s';
+            modal.fade3.style.display = "inline-block";
+            modal.fade3.style.clipPath = "polygon(0% 0%, 0% 100%,43% 100%,43% 1%,  67% 1%,67% 50%,10% 50%,10% 100%,100% 100%, 100% 0%)";
+            modal.fade3.style.transition = '0.5s';
       
             modal.photo8.style.display = 'block';
             modal.photo8.style.transition = '0.5s';    
@@ -443,32 +441,32 @@ let modalTutoriais = {
         },
         limparTutorial3(){
             modal.photo8.style.display = "none";
-            modal.modal3.style.display = "none";
+            modal.fade3.style.display = "none";
         },
     },
     Mobile : {
         tutorial1(){
 
-            modal.modal1.style.display = "inline-block";
-            modal.modal1.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 4%,90% 4%,90% 45%,10% 45%, 10% 100%, 100% 100%,100% 0%)";
-            modal.modal1.style.transition = '0.5s';
+            modal.fade1.style.display = "inline-block";
+            modal.fade1.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 4%,90% 4%,90% 45%,10% 45%, 10% 100%, 100% 100%,100% 0%)";
+            modal.fade1.style.transition = '0.5s';
     
             modal.photo1.style.display = 'block';
             modal.photo2.style.display = 'block';
             modal.photo3.style.display = 'block';
-            modal.photo1.style.top = "11%"
-            modal.photo1.style.left = "52%"
-            modal.photo2.style.top = "30%"
-            modal.photo2.style.left = "38%"
-            modal.photo3.style.top = "9%"
-            modal.photo3.style.left = "9%"
+            modal.photo1.style.top = "9%"
+            modal.photo1.style.left = "3%"
+            modal.photo2.style.top = "40%"
+            modal.photo2.style.left = "34%"
+            modal.photo3.style.top = "24%"
+            modal.photo3.style.left = "63%"
             
             modal.photo1.style.transition = '0.5s';
             modal.photo2.style.transition = '0.5s';
             modal.photo3.style.transition = '0.5s';
         },
         limparTutorial1(){
-            modal.modal1.style.display = "none";
+            modal.fade1.style.display = "none";
         
             modal.photo1.style.display = 'none';
             modal.photo2.style.display = 'none';
@@ -478,9 +476,9 @@ let modalTutoriais = {
         },
         tutorial2(){
     
-            modal.modal2.style.display = "inline-block";
-            modal.modal2.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 42%,90% 42%,90% 100%,10% 100%, 10% 100%, 100% 100%,100% 0%)";
-            modal.modal2.style.transition = '0.5s';
+            modal.fade2.style.display = "inline-block";
+            modal.fade2.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 42%,90% 42%,90% 100%,10% 100%, 10% 100%, 100% 100%,100% 0%)";
+            modal.fade2.style.transition = '0.5s';
         
             modal.photo4.style.display = 'block';
             modal.photo5.style.display = 'block';
@@ -489,12 +487,12 @@ let modalTutoriais = {
 
             modal.photo4.style.top = "9%"
             modal.photo4.style.left = "0%"
-            modal.photo5.style.top = "24%"
-            modal.photo5.style.left = "19%"
-            modal.photo6.style.top = "48%"
-            modal.photo6.style.left = "37%"
+            modal.photo5.style.top = "25%"
+            modal.photo5.style.left = "15%"
+            modal.photo6.style.top = "26%"
+            modal.photo6.style.left = "35%"
             modal.photo7.style.top = "35%"
-            modal.photo7.style.left = "34%"
+            modal.photo7.style.left = "35%"
 
             modal.photo4.style.transition = '0.5s';
             modal.photo5.style.transition = '0.5s';
@@ -502,7 +500,7 @@ let modalTutoriais = {
             modal.photo7.style.transition = '0.5s';
         },
         limparTutorial2(){
-            modal.modal2.style.display = "none";
+            modal.fade2.style.display = "none";
     
             modal.photo4.style.display = 'none';
             modal.photo5.style.display = 'none';
@@ -512,17 +510,22 @@ let modalTutoriais = {
             modalTutoriais.Mobile.tutorial3()
         },
         tutorial3(){
-            modal.modal3.style.display = "inline-block";
-            modal.modal3.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 42%,90% 42%,90% 100%,10% 100%, 10% 100%, 100% 100%,100% 0%)";
-            modal.modal3.style.transition = '0.5s';
+            modal.fade3.style.display = "inline-block";
+            modal.fade3.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 42%,90% 42%,90% 100%,10% 100%, 10% 100%, 100% 100%,100% 0%)";
+            modal.fade3.style.transition = '0.5s';
       
+            modal.photo8.style.top = "20%"
+            modal.photo8.style.left = "39%"
+            modal.photo8.style.width = "44%"
             modal.photo8.style.display = 'block';
             modal.photo8.style.transition = '0.5s';    
         
         },
         limparTutorial3(){
             modal.photo8.style.display = "none";
-            modal.modal3.style.display = "none";
+            modal.fade3.style.display = "none";
+            limparPedras();
+            limparConta(1);
         },
     }
 }
@@ -532,6 +535,8 @@ let modalTutoriais = {
 
 window.addEventListener("load", function(event) {
     if(window.innerWidth >= 768){
+        adicionadoPreto();
+        btn_calcular();
         modalTutoriais.Desktop.tutorial1();
         modal.photo1.setAttribute('src','imagens/tutoriais/passo1desktop.svg');
         modal.photo2.setAttribute('src','imagens/tutoriais/passo2desktop.svg');
@@ -542,10 +547,13 @@ window.addEventListener("load", function(event) {
         modal.photo7.setAttribute('src','imagens/tutoriais/passo7desktop.svg');
         modal.photo8.setAttribute('src','imagens/tutoriais/passo8desktop.svg');
 
-        modal.modal1.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial1()');
-        modal.modal2.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial2()');
-        modal.modal3.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial3()');
+        modal.fade1.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial1()');
+        modal.fade2.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial2()');
+        modal.fade3.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial3()');
     } else{
+        mostrarPedras.adicionarVermelho();
+        mostrarPedras.adicionarBranco();
+        btn_calcular();
         modalTutoriais.Mobile.tutorial1();  
         modal.photo1.setAttribute('src','imagens/tutoriais/passo1mobile.svg');
         modal.photo2.setAttribute('src','imagens/tutoriais/passo2mobile.svg');
@@ -556,8 +564,12 @@ window.addEventListener("load", function(event) {
         modal.photo7.setAttribute('src','imagens/tutoriais/passo7mobile.svg');
         modal.photo8.setAttribute('src','imagens/tutoriais/passo8mobile.svg'); 
 
-        modal.modal1.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial1()');
-        modal.modal2.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial2()');
-        modal.modal3.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial3()');
+        modal.fade1.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial1()');
+        modal.fade2.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial2()');
+        modal.fade3.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial3()');
+
+        mostrarPedras.adicionarVermelho();
+        mostrarPedras.adicionarBranco();
+
     }
 });

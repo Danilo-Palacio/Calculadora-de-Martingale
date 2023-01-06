@@ -440,7 +440,7 @@ footer{
             margin: 0px;
         }
         .credito{
-            position: fixed;
+            position: relative;
             bottom: 0px;
             width: 21.533rem;
             height: 1.333rem;
@@ -448,18 +448,18 @@ footer{
 
 
 /* Modais */
-.modal{
+.fade{
     display: none;
     background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left:0;
     z-index: 6;
 }
 .photo{
-    position: fixed;
+    position: absolute;
     z-index: 7;
     scale: 90%;
 
