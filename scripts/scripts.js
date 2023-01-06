@@ -281,14 +281,12 @@ function limparConta(num){ // botão de limpar a conta
     function buscaLimparConta(){// função para limpar a conta
         btnClean.style.display = 'none'
         account.style.display = 'none'
-        headerCardTitle.innerHTML = " ";
         headerCardMultiple.innerHTML = " ";
         newAccount.style.display = "flex";
         headerCardMultiple.style.backgroundColor = "#1A242D"
     }
     let btnClean = document.querySelector(`.btn${num}`)
     let account = document.querySelector(`.account${num}`)
-    let headerCardTitle = document.querySelector(`.title${num}`)
     let headerCardMultiple = document.querySelector(`.multiple${num}`)
     let newAccount = document.querySelector(`.newaccount${num}`)
 
@@ -386,7 +384,7 @@ let modalTutoriais = {
     Desktop : {
         tutorial1(){            
             modal.fade1.style.display = "inline-block";
-            modal.fade1.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 4%,39% 4%,39% 57%,10% 58%, 10% 100%, 100% 100%,100% 0%)";
+            modal.fade1.style.clipPath = "polygon(0% 0%, 0% 100%, 5% 100%, 5% 6%, 37% 6%, 37% 47%, 5% 47%, 0% 100%, 100% 100%, 100% 0%)";
             modal.fade1.style.transition = '0.5s';
     
             modal.photo1.style.display = 'block';
@@ -442,6 +440,9 @@ let modalTutoriais = {
         limparTutorial3(){
             modal.photo8.style.display = "none";
             modal.fade3.style.display = "none";
+
+            limparPedras();
+            limparConta(1);
         },
     },
     Mobile : {
@@ -535,7 +536,9 @@ let modalTutoriais = {
 
 window.addEventListener("load", function(event) {
     if(window.innerWidth >= 768){
-        adicionadoPreto();
+        mostrarPedras.adicionarPreto();
+        mostrarPedras.adicionarBranco();
+
         btn_calcular();
         modalTutoriais.Desktop.tutorial1();
         modal.photo1.setAttribute('src','imagens/tutoriais/passo1desktop.svg');
@@ -550,6 +553,10 @@ window.addEventListener("load", function(event) {
         modal.fade1.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial1()');
         modal.fade2.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial2()');
         modal.fade3.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial3()');
+
+        mostrarPedras.adicionarPreto();
+        mostrarPedras.adicionarBranco();
+
     } else{
         mostrarPedras.adicionarVermelho();
         mostrarPedras.adicionarBranco();
