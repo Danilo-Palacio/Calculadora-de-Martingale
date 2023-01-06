@@ -364,219 +364,58 @@ function cliqueEmCalcular(){
 
 //Modal
 
-let modal = {
-    fade1 : document.querySelector('.fadeum'),
-    fade2 : document.querySelector('.fadedois'),
-    fade3 : document.querySelector('.fadetres'),
-    photo1 : document.querySelector('.photoum'),
-    photo2 : document.querySelector('.photodois'),
-    photo3 : document.querySelector('.phototres'),
-    photo4 : document.querySelector('.photoquatro'),
-    photo5 : document.querySelector('.photocinco'),
-    photo6 : document.querySelector('.photoseis'),
-    photo7 : document.querySelector('.photosete'),
-    photo8 : document.querySelector('.photooito'),
-}
-
-
-
-let modalTutoriais = {
-    Desktop : {
-        tutorial1(){            
-            modal.fade1.style.display = "inline-block";
-            modal.fade1.style.clipPath = "polygon(0% 0%, 0% 100%, 5% 100%, 5% 6%, 37% 6%, 37% 47%, 5% 47%, 0% 100%, 100% 100%, 100% 0%)";
-            modal.fade1.style.transition = '0.5s';
-    
-            modal.photo1.style.display = 'block';
-            modal.photo2.style.display = 'block';
-            modal.photo3.style.display = 'block';
-            modal.photo1.style.transition = '0.5s';
-            modal.photo2.style.transition = '0.5s';
-            modal.photo3.style.transition = '0.5s';
-        },
-        limparTutorial1(){
-            modal.fade1.style.display = "none";
-        
-            modal.photo1.style.display = 'none';
-            modal.photo2.style.display = 'none';
-            modal.photo3.style.display = 'none';
-    
-            modalTutoriais.Desktop.tutorial2()
-        },
-        tutorial2(){
-    
-            modal.fade2.style.display = "inline-block";
-            modal.fade2.style.clipPath = "polygon(0% 0%, 0% 100%,43% 100%,43% 1%,  67% 1%,67% 50%,10% 50%,10% 100%,100% 100%, 100% 0%)";
-            modal.fade2.style.transition = '0.5s';
-        
-            modal.photo4.style.display = 'block';
-            modal.photo5.style.display = 'block';
-            modal.photo6.style.display = 'block';
-            modal.photo7.style.display = 'block';
-            modal.photo4.style.transition = '0.5s';
-            modal.photo5.style.transition = '0.5s';
-            modal.photo6.style.transition = '0.5s';
-            modal.photo7.style.transition = '0.5s';
-        },
-        limparTutorial2(){
-            modal.fade2.style.display = "none";
-    
-            modal.photo4.style.display = 'none';
-            modal.photo5.style.display = 'none';
-            modal.photo6.style.display = 'none';
-            modal.photo7.style.display = 'none';
-    
-            modalTutoriais.Desktop.tutorial3()
-        },
-        tutorial3(){
-            modal.fade3.style.display = "inline-block";
-            modal.fade3.style.clipPath = "polygon(0% 0%, 0% 100%,43% 100%,43% 1%,  67% 1%,67% 50%,10% 50%,10% 100%,100% 100%, 100% 0%)";
-            modal.fade3.style.transition = '0.5s';
-      
-            modal.photo8.style.display = 'block';
-            modal.photo8.style.transition = '0.5s';    
-        
-        },
-        limparTutorial3(){
-            modal.photo8.style.display = "none";
-            modal.fade3.style.display = "none";
-
-            limparPedras();
-            limparConta(1);
-        },
-    },
-    Mobile : {
-        tutorial1(){
-
-            modal.fade1.style.display = "inline-block";
-            modal.fade1.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 4%,90% 4%,90% 45%,10% 45%, 10% 100%, 100% 100%,100% 0%)";
-            modal.fade1.style.transition = '0.5s';
-    
-            modal.photo1.style.display = 'block';
-            modal.photo2.style.display = 'block';
-            modal.photo3.style.display = 'block';
-            modal.photo1.style.top = "9%"
-            modal.photo1.style.left = "3%"
-            modal.photo2.style.top = "40%"
-            modal.photo2.style.left = "34%"
-            modal.photo3.style.top = "24%"
-            modal.photo3.style.left = "63%"
-            
-            modal.photo1.style.transition = '0.5s';
-            modal.photo2.style.transition = '0.5s';
-            modal.photo3.style.transition = '0.5s';
-        },
-        limparTutorial1(){
-            modal.fade1.style.display = "none";
-        
-            modal.photo1.style.display = 'none';
-            modal.photo2.style.display = 'none';
-            modal.photo3.style.display = 'none';
-    
-            modalTutoriais.Mobile.tutorial2()
-        },
-        tutorial2(){
-    
-            modal.fade2.style.display = "inline-block";
-            modal.fade2.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 42%,90% 42%,90% 100%,10% 100%, 10% 100%, 100% 100%,100% 0%)";
-            modal.fade2.style.transition = '0.5s';
-        
-            modal.photo4.style.display = 'block';
-            modal.photo5.style.display = 'block';
-            modal.photo6.style.display = 'block';
-            modal.photo7.style.display = 'block';
-
-            modal.photo4.style.top = "9%"
-            modal.photo4.style.left = "0%"
-            modal.photo5.style.top = "25%"
-            modal.photo5.style.left = "15%"
-            modal.photo6.style.top = "26%"
-            modal.photo6.style.left = "35%"
-            modal.photo7.style.top = "35%"
-            modal.photo7.style.left = "35%"
-
-            modal.photo4.style.transition = '0.5s';
-            modal.photo5.style.transition = '0.5s';
-            modal.photo6.style.transition = '0.5s';
-            modal.photo7.style.transition = '0.5s';
-        },
-        limparTutorial2(){
-            modal.fade2.style.display = "none";
-    
-            modal.photo4.style.display = 'none';
-            modal.photo5.style.display = 'none';
-            modal.photo6.style.display = 'none';
-            modal.photo7.style.display = 'none';
-    
-            modalTutoriais.Mobile.tutorial3()
-        },
-        tutorial3(){
-            modal.fade3.style.display = "inline-block";
-            modal.fade3.style.clipPath = "polygon(0% 0%,0% 100%,10% 100%,10% 42%,90% 42%,90% 100%,10% 100%, 10% 100%, 100% 100%,100% 0%)";
-            modal.fade3.style.transition = '0.5s';
-      
-            modal.photo8.style.top = "20%"
-            modal.photo8.style.left = "39%"
-            modal.photo8.style.width = "44%"
-            modal.photo8.style.display = 'block';
-            modal.photo8.style.transition = '0.5s';    
-        
-        },
-        limparTutorial3(){
-            modal.photo8.style.display = "none";
-            modal.fade3.style.display = "none";
-            limparPedras();
-            limparConta(1);
-        },
-    }
-}
-
-
-
-
 window.addEventListener("load", function(event) {
     if(window.innerWidth >= 768){
-        mostrarPedras.adicionarPreto();
-        mostrarPedras.adicionarBranco();
-
-        btn_calcular();
-        modalTutoriais.Desktop.tutorial1();
-        modal.photo1.setAttribute('src','imagens/tutoriais/passo1desktop.svg');
-        modal.photo2.setAttribute('src','imagens/tutoriais/passo2desktop.svg');
-        modal.photo3.setAttribute('src','imagens/tutoriais/passo3desktop.svg');
-        modal.photo4.setAttribute('src','imagens/tutoriais/passo4desktop.svg');
-        modal.photo5.setAttribute('src','imagens/tutoriais/passo5desktop.svg');
-        modal.photo6.setAttribute('src','imagens/tutoriais/passo6desktop.svg');
-        modal.photo7.setAttribute('src','imagens/tutoriais/passo7desktop.svg');
-        modal.photo8.setAttribute('src','imagens/tutoriais/passo8desktop.svg');
-
-        modal.fade1.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial1()');
-        modal.fade2.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial2()');
-        modal.fade3.setAttribute('onclick','modalTutoriais.Desktop.limparTutorial3()');
-
-        mostrarPedras.adicionarPreto();
-        mostrarPedras.adicionarBranco();
-
+        //Desktop
+        seletoresTutorial.resolucaoTela = "desktop"
+        funcoesTutorial.btnSkipModal()
+   
     } else{
-        mostrarPedras.adicionarVermelho();
-        mostrarPedras.adicionarBranco();
-        btn_calcular();
-        modalTutoriais.Mobile.tutorial1();  
-        modal.photo1.setAttribute('src','imagens/tutoriais/passo1mobile.svg');
-        modal.photo2.setAttribute('src','imagens/tutoriais/passo2mobile.svg');
-        modal.photo3.setAttribute('src','imagens/tutoriais/passo3mobile.svg');
-        modal.photo4.setAttribute('src','imagens/tutoriais/passo4mobile.svg');
-        modal.photo5.setAttribute('src','imagens/tutoriais/passo5mobile.svg');
-        modal.photo6.setAttribute('src','imagens/tutoriais/passo6mobile.svg');
-        modal.photo7.setAttribute('src','imagens/tutoriais/passo7mobile.svg');
-        modal.photo8.setAttribute('src','imagens/tutoriais/passo8mobile.svg'); 
-
-        modal.fade1.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial1()');
-        modal.fade2.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial2()');
-        modal.fade3.setAttribute('onclick','modalTutoriais.Mobile.limparTutorial3()');
-
-        mostrarPedras.adicionarVermelho();
-        mostrarPedras.adicionarBranco();
-
+    //mobile
+        seletoresTutorial.resolucaoTela = "mobile"
+        funcoesTutorial.btnSkipModal()
     }
 });
+
+let seletoresTutorial = {
+    modal: document.querySelector('#modal'),
+    photoModal : document.querySelector('#passo'),
+    btnSkipModal: document.querySelector('.btn-skip'),
+    contador : 1,
+    resolucaoTela:(""),
+}
+
+
+let funcoesTutorial = {
+        btnSkipModal(){            
+            if (seletoresTutorial.contador <= 2){
+
+                seletoresTutorial.modal.style.display ="inline-block";
+
+                seletoresTutorial.photoModal.setAttribute('src',`imagens/tutoriais/passo${seletoresTutorial.contador}_${seletoresTutorial.resolucaoTela}.svg`)
+                
+                seletoresTutorial.contador ++;            
+                
+            }else if (seletoresTutorial.contador =3) {
+                
+                seletoresTutorial.btnSkipModal.style.display = "none";
+                seletoresTutorial.modal.style.display ="inline-block";
+
+                seletoresTutorial.photoModal.setAttribute('src',`imagens/tutoriais/passo${seletoresTutorial.contador}_${seletoresTutorial.resolucaoTela}.svg`)
+                
+                seletoresTutorial.contador ++;          
+            
+            }
+        },
+        btnCloseModal(){
+            seletoresTutorial.modal.style.display = "none";
+        }
+    
+}
+
+
+
+
+
+
+// seletoresTutorial.photoModal.setAttribute('src',`imagens/tutoriais/passo${i}_mobile.svg`)

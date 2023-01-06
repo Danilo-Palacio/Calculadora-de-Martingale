@@ -24,14 +24,13 @@ Grandes Telas: acima de 1200px
 @media screen and (max-width: 900px){
 
     #back{
-        display: flex;
+    display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+
     background: var(--background);
     align-items: center;
     justify-content: space-between;
-       }
+}
        main{
         max-width: 800px;
        }
@@ -47,33 +46,35 @@ Grandes Telas: acima de 1200px
     #back{
         display: grid;
         grid-template-columns: 450px 1fr;
+        grid-template-rows: 35% 30% 35%;
         grid-template-areas:
         "header main "
         " . main"
         "footer main ";
         align-items: center;
         justify-items: center;
-        height: 100vh;}
+        height: 100vh;
+    }
 
     header{
         grid-area: header;
         justify-self: center;
+        align-self: start;
     }
     main{
         grid-area: main;
         max-width: 700px;
     }
-    .crash, double{
-        height: 100vh;
+    .crash, .double{
         align-content: center;
     }
     footer{
         grid-area: footer;
-        
         justify-self: center;
     }
     #card{
         padding: 5px ;
+
     }
     .credito{
         position: absolute;

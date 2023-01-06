@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/media-query.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 <body>
     <section id="back">
 
         <!-- Header está ok -->
         <header>
-            <div id="container-menu">
+            <div id="container-menu" class="container-menu-crash">
               <img src="imagens/logo-crash.svg" alt="crash">
               <div id="infos">
                 <!-- Primeira linha -->
@@ -296,8 +296,27 @@
             </section>
         </footer>
         
-    <section>    
-        <script src="scripts/scripts.js">
+    </section>
+
+
+
+    <span id="modal">
+        <div id="fade"> 
+            <img id="passo" src="imagens/tutoriais/passo1_mobile.svg" alt="">
+
+            <span class="btn">
+                <span class="material-symbols-rounded btn-modal btn-skip" onclick="funcoesTutorial.btnSkipModal()">
+                    arrow_forward
+                </span>
+                <span class="material-symbols-outlined btn-modal btn-close" onclick="funcoesTutorial.btnCloseModal()">close</span>
+            </span>
+            
+        </div>
+        
+    </span>
+    
+    
+    <script src="scripts/scripts.js">
     </script>
 </body>
 </html>
