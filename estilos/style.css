@@ -15,20 +15,24 @@
     --ouro-50 :linear-gradient(50deg, hsla(54, 79%, 64%, 0.5) 0%, hsla(54, 71%, 60%,  0.5) 21.88%, hsla(54, 64%, 56%,  0.5) 44.27%, rgba(206, 192, 64, 0.81) 60.42%, hsla(54, 58%, 52%,  0.5) 100%);
 }
 
-    body{
-        margin: 0;
-        padding: 0;
-        font-size: 15px;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-        background-color: var(--background);
-        width: 100vw;
-        height: 100vh;
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
 
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+header{
         display: flex;
         align-items: center;
-        justify-content: center; }
-
+        height: 300px;
+        background-color: var(--background);
+        flex-direction: column;
+}
 
     #container-menu{
         width: 21.533rem;
@@ -41,7 +45,10 @@
         display: flex;
         justify-content: center;
         column-gap: 16px;
-        align-items: center; }
+        align-items: center; 
+
+        
+    }
     #container-menu > img{
         width: 7.4rem; }
 
@@ -244,11 +251,11 @@
         align-items: center;}
     #account {
         flex-direction: row;
-        column-gap:0.667rem;
+        column-gap:2px;
         align-items: center;
         justify-content: center;
         
-        margin: 1.333rem 1.333rem 1rem 1.333rem;}
+        margin: 0.4rem 0.4rem 0.4rem 0.4rem;}
     .account1,.account2,.account3,.account4{display: none;}
     .box{
         display: flex;
@@ -257,8 +264,14 @@
         align-items: center;
         margin-bottom: 0.333rem;}
 
+    #sem-gale ,#primeiro-gale,#segundo-gale{
+        background-color: var(--background);
+        padding: 7px;
+        border-radius: 0.3rem;
+        box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.034);
+    }
     .card-account-title{
-        width: 3.8rem;
+        width: 4.2rem;
         height: 0.8rem;
         font-size: 0.533rem;
         margin: 0.067rem;
@@ -330,6 +343,7 @@
 
 .newaccount > .material-symbols-outlined{
     font-size: 2.933rem;
+    cursor: pointer;
 }
 /* Botão Limpar */
 
@@ -407,17 +421,14 @@ footer{
     #logo-blaze{
         clip-path: polygon(56% 17%, 79% 58%, 54% 77%, 45% 76%, 20% 58%);
         
-        z-index: 9;
+        z-index: 4;
         cursor: pointer;}
     #logo-blaze:active{
         transform: scale(1.1);}
 
 /* Créditos */
         .credito, .credito a{
-            position: relative;
-            bottom: 1px;
-            width: 21.533rem;
-            height: 1.333rem;
+           
 
             background-color: var(--background-clean);
             color: var(--green);
@@ -428,3 +439,71 @@ footer{
             border-radius: 5px 5px 0 0;
             margin: 0px;
         }
+        .credito{
+            position: fixed;
+            bottom: 0px;
+            width: 21.533rem;
+            height: 1.333rem;
+        }
+
+
+/* Modais */
+.modal{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left:0;
+    z-index: 6;
+}
+.photo{
+    position: fixed;
+    z-index: 7;
+    scale: 90%;
+
+    transition: 0.5s;
+    
+}
+.photoum{
+    display: none;
+    top: 3%;
+    left: 28%;
+}
+.photodois{
+    display: none;
+    top: 31%;
+    left: 18%;
+}
+.phototres{
+    display: none;
+    top: 19%;
+    left: 35%;
+}
+
+.photoquatro{
+    display: none;
+    top: 10%;
+    left: 24%;
+}
+.photocinco{
+    display: none;
+    top: 20%;
+    left: 14%;
+}
+.photoseis{
+    display: none;
+    top: 27%;
+    left: 15%;
+}
+.photosete{
+    display: none;
+    top: 35%;
+    left: 14%;
+}
+.photooito{
+    display: none;
+    top: 14%;
+    left: 68%;
+}
