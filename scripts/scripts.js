@@ -18,6 +18,11 @@ function cliqueMetade(){ // Botão de Metade
 function cliqueDobro(){ // Botão de Dobro
     inputQuantia.value = inputQuantia.value * 2 ;
 }
+function ativacao_btnCalcular(){
+    if (colors.adicionadoBranco.length != 0 || colors.adicionadoPreto.length != 0 || colors.adicionadoVermelho.length != 0 ){
+        alert("escolheu uma cor")
+    }else {alert('Escolha uma cor')}
+} 
 
 // sessão de objetos para ambos os jogos! !!!!!!!!
 let testeParaCriarConta = {// Objeto de funções para testes 
@@ -362,8 +367,12 @@ function cliqueEmCalcular(){
     },500);
 }
 
-//Modal
 
+
+
+
+
+//Tutorial
 window.addEventListener("load", function(event) {
     if(window.innerWidth >= 768){
         //Desktop
@@ -376,7 +385,6 @@ window.addEventListener("load", function(event) {
         funcoesTutorial.btnSkipModal()
     }
 });
-
 let seletoresTutorial = {
     modal: document.querySelector('#modal'),
     photoModal : document.querySelector('#passo'),
@@ -384,10 +392,8 @@ let seletoresTutorial = {
     contador : 1,
     resolucaoTela:(""),
 }
-
-
 let funcoesTutorial = {
-        btnSkipModal(){            
+        btnSkipModal(){
             if (seletoresTutorial.contador <= 2){
 
                 seletoresTutorial.modal.style.display ="inline-block";
@@ -404,7 +410,6 @@ let funcoesTutorial = {
                 seletoresTutorial.photoModal.setAttribute('src',`imagens/tutoriais/passo${seletoresTutorial.contador}_${seletoresTutorial.resolucaoTela}.svg`)
                 
                 seletoresTutorial.contador ++;          
-            
             }
         },
         btnCloseModal(){
@@ -412,10 +417,3 @@ let funcoesTutorial = {
         }
     
 }
-
-
-
-
-
-
-// seletoresTutorial.photoModal.setAttribute('src',`imagens/tutoriais/passo${i}_mobile.svg`)
