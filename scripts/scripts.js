@@ -1,100 +1,312 @@
-let inputQuantia = document.querySelector('#quantia');
+let inputValue = document.querySelector('#quantia');
 let containerMenu = document.querySelector('#container-menu');
 let newAccount1 = document.querySelector('.newaccount1')
 let newAccount2 = document.querySelector('.newaccount2')
 let newAccount3 = document.querySelector('.newaccount3')
 let newAccount4 = document.querySelector('.newaccount4')
-let sel = document.querySelector('#select')
+let select = document.querySelector('#select')
 let input_autoRetirar = document.querySelector('#auto-retirar')
-let emojiDasPedras = []
-let contaDisponivel;
-let somaTotal = 0;
 
 
-// Seção de botões utiizado em ambos os jogos
+
 function cliqueMetade(){ // Botão de Metade
-    inputQuantia.value = inputQuantia.value / 2 ;
+    inputValue.value = inputValue.value / 2 ;
 }
 function cliqueDobro(){ // Botão de Dobro
-    inputQuantia.value = inputQuantia.value * 2 ;
+    inputValue.value = inputValue.value * 2 ;
 }
-function ativacao_btnCalcular(){
-    if (colors.adicionadoBranco.length != 0 || colors.adicionadoPreto.length != 0 || colors.adicionadoVermelho.length != 0 ){
-        alert("escolheu uma cor")
-    }else {alert('Escolha uma cor')}
-} 
 
-// sessão de objetos para ambos os jogos! !!!!!!!!
-let testeParaCriarConta = {// Objeto de funções para testes 
-    contaDouble(){
-        if (newAccount1.style.display !== "none"){
-            contaDisponivel = 1
-    
-            criarConta.criarContaDouble();
-            repeticao.repeticaoDeGaleDouble();
+
+// Pedras escolhidas
+
+/* let pedra = {
+        Vermelha : {
+            emoji:`\u{1F534}`,
+            quantidade:[],
+            adicionarVermelho(){
+                if (inputValue.value == 0 ){
+                    alert('Valor Invalido')
+                }else{
+                    pedra.Vermelha.quantidade.push(Number(inputValue.value))
             
-            contaDisponivel = 0
-    
-        }else if (newAccount2.style.display !== "none"){
-            contaDisponivel = 2
-            criarConta.criarContaDouble();
-            repeticao.repeticaoDeGaleDouble();
+                    var option = document.createElement('option')
+                    option.text=`Adicionado R$${inputValue.value} ao ${pedra.Vermelha.emoji}.`
+                    select.appendChild(option)
+        
+                    btn_calculate.status.enable()  
             
-            contaDisponivel = 0
-    
-        }else if (newAccount3.style.display !== "none"){
-            contaDisponivel = 3
-            criarConta.criarContaDouble();
-            repeticao.repeticaoDeGaleDouble();
-    
-            contaDisponivel = 0
-    
-        }else if (newAccount4.style.display !== "none"){
-            contaDisponivel = 4
-            criarConta.criarContaDouble();
-            repeticao.repeticaoDeGaleDouble();
-            contaDisponivel = 0
-    
-        }else {
-            alert('limpe um dos campos para adicionar novas contas')
-        }
-    },
-    contaCrash(){
-        if (newAccount1.style.display !== "none"){
-            contaDisponivel = 1
+                    pedra.emojiDasPedras += 1+`${pedra.Vermelha.emoji}`
+                } 
+            }
+        },
+        Branca : {
+            emoji:`\u{26AA}`,
+            quantidade:[],
+            adicionarBranco(){
+                if (inputValue.value == 0 ){
+                    alert('Valor Invalido')
+                }else{
+                    pedra.Branca.quantidade.push(Number(inputValue.value))
             
-            criarConta.criarContaCrash();
-            repeticao.repeticaoDeGaleCrash();
+                    var option = document.createElement('option')
+                    option.text=`Adicionado R$${inputValue.value} ao ${pedra.Branca.emoji}.`
+                    select.appendChild(option)
+        
+                    btn_calculate.status.enable()  
             
-            contaDisponivel = 0
-    
-        }else if (newAccount2.style.display !== "none"){
-            contaDisponivel = 2
-            criarConta.criarContaCrash();
-            repeticao.repeticaoDeGaleCrash();
+                    pedra.emojiDasPedras += `${pedra.Branca.emoji}`
+                }
+            },
+        },
+        Preta : {
+            emoji:`\u{26AB}`,
+            quantidade:[],
+            adicionarPreto(){
+
+                if (inputValue.value == 0 ){
+                    alert('Valor Invalido')
+                }else{
+                    pedra.Preta.quantidade.push(Number(inputValue.value))
             
-            contaDisponivel = 0
+                    var option = document.createElement('option')
+                    option.text=`Adicionado R$${inputValue.value} ao ${pedra.Preta.emoji}.`
+                    select.appendChild(option)
+        
+                    btn_calculate.status.enable()          
+            
+                    pedra.Preta.quantidade += 1;
+                }
+            }
+        },
+        emojiDasPedras : []
+    };
+    */
     
-        }else if (newAccount3.style.display !== "none"){
-            contaDisponivel = 3
-            criarConta.criarContaCrash();
-            repeticao.repeticaoDeGaleCrash();
+let stone ={
+        red:{
+            amount:[],
+            color:'red',
+            multiple: 2,
+            emoji:`\u{1F534}`,
+            total:null,
+        },
+        white:{
+            amount:[],
+            color: 'white',
+            multiple: 14,
+            emoji:`\u{26AA}`,            
+            total:null,
+        },
+        black:{
+            amount:[],
+            color: 'black',
+            multiple: 2,
+            emoji:`\u{26AB}`,
+            total:null,
     
-            contaDisponivel = 0
-    
-        }else if (newAccount4.style.display !== "none"){
-            contaDisponivel = 4
-            criarConta.criarContaCrash();
-            repeticao.repeticaoDeGaleCrash();
-            contaDisponivel = 0
-    
-        }else {
-            alert('limpe um dos campos para adicionar novas contas')
-        }
-    } ,
+        },
 }
-let criarConta = {
-    criarContaDouble(){//utiliza a variavel contaDisponivel para mostrar os campos
+function insert(color){
+    if( color === 'red' ){
+
+        if(inputValue.value <= 0){
+            alert('Valor Invalido')
+        }else{
+            stone.red.amount.push(Number(inputValue.value));
+
+            var option = document.createElement('option')
+            option.text=`Adicionado R$${inputValue.value} ao ${stone.red.emoji}.`
+            select.appendChild(option)
+
+            btn_calculate.status.enable()
+
+            
+        }
+
+    }else if ( color === 'white' ){
+
+        if(inputValue.value <= 0){
+            alert('Valor Invalido')
+        }else{
+            stone.white.amount.push(Number(inputValue.value));
+
+            var option = document.createElement('option')
+            option.text=`Adicionado R$${inputValue.value} ao ${stone.white.emoji}.`
+            select.appendChild(option)
+
+            btn_calculate.status.enable()
+
+        }
+
+    } else if( color === 'black' ){
+
+        if(inputValue.value <= 0){
+            alert('Valor Invalido')
+        }else{
+            stone.black.amount.push(Number(inputValue.value));
+
+            var option = document.createElement('option')
+            option.text=`Adicionado R$${inputValue.value} ao ${stone.black.emoji}.`
+            select.appendChild(option)
+
+            btn_calculate.status.enable()
+
+            
+        }
+    }
+}
+
+let btn_calculate = {
+
+    selectorcalculate: document.querySelector('#new_count'),    
+    selectorClean: document.querySelector('.new_count'),
+
+    status : {
+        enable(){
+            btn_calculate.selectorcalculate.style.opacity = '1'
+            btn_calculate.selectorcalculate.style.color = 'var(--white)'
+            btn_calculate.selectorcalculate.style.cursor = 'pointer'
+
+            btn_calculate.selectorClean.style.opacity = '1' 
+            btn_calculate.selectorClean.style.color = 'var(--white)'
+            btn_calculate.selectorClean.style.cursor = 'pointer'
+        } ,
+        disable(){
+            btn_calculate.selectorcalculate.style.opacity = ' 0.3'; 
+            btn_calculate.selectorcalculate.style.color = 'var(--red)'; 
+            btn_calculate.selectorcalculate.style.cursor = 'default'
+            
+
+            btn_calculate.selectorClean.style.opacity = ' 0.3';
+            btn_calculate.selectorClean.style.color = 'var(--red)';
+            btn_calculate.selectorClean.style.cursor = 'default' 
+        },
+    },
+    calcularDouble(){// TESTE DE COR || SOMENTE DOUBLE!
+        
+        if(stone.red.amount.length > 0 && stone.black.amount.length > 0){
+            
+            
+            alert('Não é possivel adicionar uma Preta e uma Vermelha')
+            limparStone();
+            
+        }  
+        else if(stone.black.amount.length == 0 && stone.white.amount.length == 0 && stone.red.amount.length == 0){
+          
+            alert("Escolha uma Cor")
+    
+        }
+        else{              
+            for ( let pos in stone.red.amount){
+                stone.red.total += Number(stone.red.amount[pos])
+            }
+            
+            for ( let pos in stone.white.amount){
+                stone.white.total += Number(stone.white.amount[pos])
+            }
+            
+            for ( let pos in stone.black.amount){
+                stone.black.total += Number(stone.black.amount[pos])
+            }
+
+            if (stone.white.total > 0){
+
+                resultado = confirm(`
+                OK - Para fazer gale com o valor do Branco
+                Cancelar - manter o valor da primeira jogada
+                `)//Fazer modal explicando que é arriscado
+                
+                if (resultado === true){
+                    limparStone(); // Limpa as pedras
+                    btn_calculate.status.disable(); // Desalibita o botão novamente
+                    spaceForNewAccount.contaDouble(true); // Faz o teste da conta
+                }else if(resultado === false){
+                    limparStone(); // Limpa as pedras
+                    btn_calculate.status.disable(); // Desalibita o botão novamente
+                    spaceForNewAccount.contaDouble(false); // Faz o teste da conta
+                }
+
+                
+            }else{
+                limparStone(); // Limpa as pedras
+                btn_calculate.status.disable(); // Desalibita o botão novamente
+                spaceForNewAccount.contaDouble(true); // Faz o teste da conta
+            }
+            
+        };
+        
+        stone.red.total = null;
+        stone.white.total = null;
+        stone.black.total = null;
+
+        
+    },
+    CalcularCrash(){
+        resultadoContaCrash = inputValue.value * input_autoRetirar.value 
+        spaceForNewAccount.contaCrash();
+        pedra.emojiDasPedras = input_autoRetirar.value
+        cleanAutoRetirar();
+    },
+}
+
+let spaceForNewAccount = { //Espaço para incluir a conta
+    // Testa qual espaço está disponivel para mostrar a conta
+        contaDouble(resultado){
+            if (newAccount1.style.display !== "none"){
+        
+                newAccount.criarContaDouble(1);
+                repeticao.repeticaoDeGaleDouble(resultado,1,1);
+        
+            }else if (newAccount2.style.display !== "none"){
+    
+                newAccount.criarContaDouble(2);
+                repeticao.repeticaoDeGaleDouble(resultado,2,1);
+        
+            }else if (newAccount3.style.display !== "none"){
+    
+                newAccount.criarContaDouble(3);
+                repeticao.repeticaoDeGaleDouble(resultado,3,1);
+        
+            }else if (newAccount4.style.display !== "none"){
+    
+                newAccount.criarContaDouble(4);
+                repeticao.repeticaoDeGaleDouble(resultado,4,1);
+        
+            }else {
+    
+                alert('limpe um dos campos para adicionar novas contas')
+            }
+        },
+        contaCrash(){
+            if (newAccount1.style.display !== "none"){
+                
+                newAccount.criarContaCrash(1);
+                repeticao.repeticaoDeGaleCrash();
+                
+            }else if (newAccount2.style.display !== "none"){
+    
+                newAccount.criarContaCrash(2);
+                repeticao.repeticaoDeGaleCrash();
+    
+            }else if (newAccount3.style.display !== "none"){
+    
+                newAccount.criarContaCrash(3);
+                repeticao.repeticaoDeGaleCrash();
+        
+            }else if (newAccount4.style.display !== "none"){
+                newAccount.criarContaCrash(4);
+                repeticao.repeticaoDeGaleCrash();
+        
+            }else {
+    
+                alert('limpe um dos campos para adicionar novas contas')
+    
+            }
+        } ,
+}
+
+let newAccount = {
+    criarContaDouble(contaDisponivel){ //Cria o Layout da conta 
 
         let btnClean = document.querySelector(`.btn${contaDisponivel}`)
         let account = document.querySelector(`.account${contaDisponivel}`)
@@ -104,12 +316,13 @@ let criarConta = {
     
         account.style.display = "flex";
         btnClean.style.display = "inline-block";
-        headerCardTitle.innerHTML = `Conta ${contaDisponivel}`;
-        headerCardMultiple.innerHTML = `${emojiDasPedras}`;
-        headerCardMultiple.style.backgroundColor = "hsla(0, 0%, 100%, 0.5)"
+        headerCardTitle.innerHTML = `Conta ${contaDisponivel}`;    
+        headerCardMultiple.innerHTML = ``;
+        
+
         newAccount.style.display = "none";
     },
-    criarContaCrash(){//utiliza a variavel contaDisponivel para mostrar os campos
+    criarContaCrash(contaDisponivel){//Cria o Layout da conta
 
         let btnClean = document.querySelector(`.btn${contaDisponivel}`)
         let account = document.querySelector(`.account${contaDisponivel}`)
@@ -124,17 +337,20 @@ let criarConta = {
         newAccount.style.display = "none";
     },
 }
-let repeticao = {
-        repeticaoDeGaleDouble(){ // Faz a repetição nos Gales e ativa a função calculoDeGale, utiliza os dados da contaDisponivel
 
-            for (let i = 1; i <=3 ; i++) {
-        
-                if (i == 1){
-                    calculoDeGale.somaGaleDouble(1)
-                }else if (i == 2){
-                    calculoDeGale.somaGaleDouble(2)
-                }else {
-                    calculoDeGale.somaGaleDouble(3)
+let repeticao = {
+        repeticaoDeGaleDouble(resultado,contaDisponivel, gale){
+            while ( gale <= 3){
+
+                if (gale == 1){
+                    calculoDeGale.somaGaleDouble(resultado,contaDisponivel,gale)
+                    gale ++
+                }else if (gale == 2){
+                    calculoDeGale.somaGaleDouble(resultado,contaDisponivel,gale)
+                    gale ++
+                }else if (gale == 3){
+                    calculoDeGale.somaGaleDouble(resultado,contaDisponivel,gale)
+                    gale ++
                 }
             }
         },  
@@ -150,52 +366,103 @@ let repeticao = {
                     calculoDeGale.somaGaleCrash(3)
                 }
             }
-        }
+        },
+        
 }
+
+
+let lossAccount1;
+let lossAccount2;
+
+//resultado = confirm(`Quer fazer gale ${gale} com o branco?`)
+
 let calculoDeGale = {
 
-    somaGaleDouble(i){ // Faz o calculo dos Martingales
-        let aposta = document.querySelector(`.aposta-${contaDisponivel}-gale-${i}`)
-        let ganhou = document.querySelector(`.ganhou-${contaDisponivel}-gale-${i}`)
-        let perdeu = document.querySelector(`.perdeu-${contaDisponivel}-gale-${i}`)
-        let branco = document.querySelector(`.branco-${contaDisponivel}-gale-${i}`)
-    
-        let contaAposta = somaTotal * i; // Quanto apostou
-            contaAposta = contaAposta.toFixed(1);
-    
-        let contaGanhou = ((somaTotal - saldosDoCalculo.somaBranco ) * i * 2)- somaTotal;// Se der a cor
-            contaGanhou = contaGanhou.toFixed(1);
-    
-        let valorBranco = 0;
+    somaGaleDouble(resultado,contaDisponivel,gale){ // Faz o calculo dos Martingales
+        let aposta = document.querySelector(`.aposta-${contaDisponivel}-gale-${gale}`)
+        let ganhou = document.querySelector(`.ganhou-${contaDisponivel}-gale-${gale}`)
+        let perdeu = document.querySelector(`.perdeu-${contaDisponivel}-gale-${gale}`)
+        let branco = document.querySelector(`.branco-${contaDisponivel}-gale-${gale}`)
+        
+        let betAccount;
+        let colorAccount;
+        let whiteAccount;
+        let lossAccount;
 
-        if(saldosDoCalculo.somaBranco > 0){
-                valorBranco = (saldosDoCalculo.somaBranco * 14) - contaAposta; // Se der branco
-                valorBranco = valorBranco.toFixed(1);
-            }else{
-                valorBranco = 0
+
+        if (resultado === true){
+            
+            if ( gale === 1 ){
+
+                betAccount = stone.red.total + stone.white.total + stone.black.total;
+                colorAccount = ((stone.red.total + stone.black.total )* gale);
+                whiteAccount = (stone.white.total * gale) * 14;
+                lossAccount = stone.red.total + stone.white.total + stone.black.total;
+
+            
+            } else if (gale === 2 ){
+            
+                betAccount = (stone.red.total + stone.white.total + stone.black.total) * gale;
+                colorAccount = ((stone.red.total + stone.black.total) * gale);
+                whiteAccount = (stone.white.total * gale) * 14;
+                lossAccount = ((stone.red.total + stone.white.total + stone.black.total) * gale);
+
+            }else if (gale === 3){
+            
+                betAccount = (stone.red.total + stone.white.total + stone.black.total) * 6;
+                colorAccount = ((stone.red.total + stone.black.total ) * 6);
+                whiteAccount = (stone.white.total * gale) * 14;
+                lossAccount = (stone.red.total + stone.white.total + stone.black.total) * 6;
+
             }
-        let contaPerdeu = somaTotal * i; // Se perder
-            contaPerdeu = contaPerdeu.toFixed(1);
+
+        }else if(resultado === false) {
+
+            if ( gale === 1 ){
+
+                betAccount = stone.red.total + stone.white.total + stone.black.total;
+                colorAccount = ((stone.red.total + stone.black.total )* gale);
+                whiteAccount = stone.white.total * 14;
+                lossAccount = stone.red.total + stone.white.total + stone.black.total;
+
+            
+            } else if (gale === 2 ){
+            
+                betAccount = (stone.red.total + stone.white.total + stone.black.total) * 3;
+                colorAccount = ((stone.red.total + stone.black.total) * 3);
+                whiteAccount = stone.white.total * 14;
+                lossAccount = ((stone.red.total + stone.white.total + stone.black.total) * 3);
+
+            }else if (gale === 3){
+            
+                betAccount = (stone.red.total + stone.white.total + stone.black.total) * 6;
+                colorAccount = ((stone.red.total + stone.black.total ) * 6);
+                whiteAccount = stone.white.total * 14;
+                lossAccount = (stone.red.total + stone.white.total + stone.black.total) * 6;
+
+            }
+           
+        }
     
-    
-        aposta.innerHTML = `R$${contaAposta}`
-        ganhou.innerHTML = `R$${contaGanhou}`
-        branco.innerHTML = `R$${valorBranco}`
-        perdeu.innerHTML = `R$${contaPerdeu}`
+        aposta.innerHTML = `R$${betAccount.toFixed(1)}`
+        ganhou.innerHTML = `R$${colorAccount.toFixed(1)}`
+        branco.innerHTML = `R$${whiteAccount.toFixed(1)}`
+        perdeu.innerHTML = `-R$${lossAccount.toFixed(1)}`
+        whiteAccount = 0
     },
     somaGaleCrash(i){ // Faz o calculo dos Martingales
          let aposta = document.querySelector(`.aposta-${contaDisponivel}-gale-${i}`)
          let ganhou = document.querySelector(`.ganhou-${contaDisponivel}-gale-${i}`)
          let perdeu = document.querySelector(`.perdeu-${contaDisponivel}-gale-${i}`)
     
-         let contaAposta = inputQuantia.value * i; // Quanto apostou
+         let contaAposta = inputValue.value * i; // Quanto apostou
              contaAposta = contaAposta.toFixed(1);
     
-         let contaGanhou = inputQuantia.value* i * input_autoRetirar.value;// Se ganhar
+         let contaGanhou = inputValue.value* i * input_autoRetirar.value;// Se ganhar
              contaGanhou = contaGanhou.toFixed(1);
     
     
-         let contaPerdeu = inputQuantia.value * i; // Se perder
+         let contaPerdeu = inputValue.value * i; // Se perder
              contaPerdeu = contaPerdeu.toFixed(1);
     
     
@@ -205,81 +472,32 @@ let calculoDeGale = {
      }
 
 }
-let mostrarPedras = {
 
-    adicionarPreto(){
 
-        if (inputQuantia.value == 0 ){
-            alert('Valor Invalido')
-        }else{
-            colors.adicionadoPreto.push(Number(inputQuantia.value))
-    
-            var option = document.createElement('option')
-            option.text=`Adicionado R$${inputQuantia.value} ao \u{26AB}.`
-            sel.appendChild(option)
-    
-            emojiDasPedras += `\u{26AB}`
-        }
-    },
-    adicionarBranco(){
-    
-        if (inputQuantia.value == 0 ){
-            alert('Valor Invalido')
-        }else{
-            colors.adicionadoBranco.push(Number(inputQuantia.value))
-    
-            var option = document.createElement('option')
-            option.text=`Adicionado R$${inputQuantia.value} ao \u{26AA}.`
-            sel.appendChild(option)
-    
-            emojiDasPedras += `\u{26AA}`
-        }
-    },
-    adicionarVermelho(){
-    
-        if (inputQuantia.value == 0 ){
-            alert('Valor Invalido')
-        }else{
-            colors.adicionadoVermelho.push(Number(inputQuantia.value))
-    
-            var option = document.createElement('option')
-            option.text=`Adicionado R$${inputQuantia.value} ao \u{1F534}.`
-            sel.appendChild(option)
-    
-            emojiDasPedras += `\u{1F534}`
-        } 
-    }
 
-}
+
+
 // Fim da sessão de objetos!!!!!
 
 
 // Sessão Double! 
 
-let saldosDoCalculo = {
-    somaPreto :Number(0),
-    somaVermelho: Number(0),
-    somaBranco: Number(0),
-}
-let colors = {
-    adicionadoPreto: [],
-    adicionadoBranco: [],
-    adicionadoVermelho: [],
-}
-function limparPedras(){// botão limpar pedras
 
-    colors.adicionadoBranco = 0
-    colors.adicionadoPreto = 0
-    colors.adicionadoVermelho = 0
+function limparStone(){// botão limpar pedras
 
-    sel.innerHTML = ' '
+    stone.red.amount = 0
+    stone.white.amount = 0
+    stone.black.amount = 0
 
-    colors.adicionadoBranco = []
-    colors.adicionadoPreto = []
-    colors.adicionadoVermelho = []
+    select.innerHTML = ' '
 
-    inputQuantia.value = 1.1;
-    emojiDasPedras = ''
+    stone.red.amount = []
+    stone.white.amount = []
+    stone.black.amount = []
+
+    inputValue.value = 1.1;
+
+    btn_calculate.status.disable()
 }
 function limparConta(num){ // botão de limpar a conta
 
@@ -305,62 +523,23 @@ function limparConta(num){ // botão de limpar a conta
         buscaLimparConta()
     }
 }
-function btn_calcular(){// TESTE DE COR || SOMENTE DOUBLE!
 
-    if(colors.adicionadoPreto.length > 0 && colors.adicionadoVermelho.length > 0){
-        alert('Não é possivel adicionar uma Preta e uma Vermelha')
-        limparPedras();
 
-        
-        
-    }else if(colors.adicionadoPreto.length == 0 && colors.adicionadoVermelho.length == 0 && colors.adicionadoBranco.length == 0){
-        alert("Escolha uma Cor")
-
-    }else{
-
-        for ( let pos in colors.adicionadoPreto){
-            saldosDoCalculo.somaPreto += colors.adicionadoPreto[pos]
-        }
-        for ( let pos in colors.adicionadoBranco){
-            saldosDoCalculo.somaBranco += colors.adicionadoBranco[pos]
-        }
-        for ( let pos in colors.adicionadoVermelho){
-            saldosDoCalculo.somaVermelho += colors.adicionadoVermelho[pos]
-        }
-
-        somaTotal = saldosDoCalculo.somaBranco + saldosDoCalculo.somaPreto + saldosDoCalculo.somaVermelho
-
-        testeParaCriarConta.contaDouble()
-        limparPedras()
-
-        
-
-        saldosDoCalculo.somaBranco = 0
-        saldosDoCalculo.somaPreto = 0
-        saldosDoCalculo.somaVermelho = 0
-    }
-}
 
 // Sessão Crash
-
 var resultadoContaCrash= 0;
-
-function CalcularCrash(){
-    resultadoContaCrash = inputQuantia.value * input_autoRetirar.value 
-    testeParaCriarConta.contaCrash();
-    emojiDasPedras = input_autoRetirar.value
-    cleanAutoRetirar();
-}
 function cleanAutoRetirar(){
     input_autoRetirar.value = "";
 }
 
 let id = null;
+
+
 //Alerta clique em Calcular
 
 function cliqueEmCalcular(){  
     containerMenu.style.transition = '0.9s';
-    containerMenu.style.outline = '3px solid var(--green-50)'
+    containerMenu.style.outline = '3px solid var(--green)'
     setTimeout(function(){
         containerMenu.style.transition = '0.9s';
         containerMenu.style.outline = '0'
@@ -370,9 +549,9 @@ function cliqueEmCalcular(){
 
 
 
-
-
 //Tutorial
+
+/*
 window.addEventListener("load", function(event) {
     if(window.innerWidth >= 768){
         //Desktop
@@ -395,7 +574,6 @@ let seletoresTutorial = {
 let funcoesTutorial = {
         btnSkipModal(){
             if (seletoresTutorial.contador <= 2){
-
                 seletoresTutorial.modal.style.display ="inline-block";
 
                 seletoresTutorial.photoModal.setAttribute('src',`imagens/tutoriais/passo${seletoresTutorial.contador}_${seletoresTutorial.resolucaoTela}.svg`)
@@ -417,3 +595,5 @@ let funcoesTutorial = {
         }
     
 }
+
+*/

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/media-query.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
     
     
 </head>
@@ -30,16 +31,29 @@
                     </div>
                 <!-- Segunda Linha -->
                     <div id="box-escolha">
-                        <input type="button" value="X2" class="btn-outline  red btn-full" onclick="mostrarPedras.adicionarVermelho()">
+                        <input type="button" value="X2" class="btn-outline  red btn-full"
+                        id="btn-vermelho" onclick="insert('red')" >
 
-                        <input type="button" value="X14" class="btn-outline white btn-full"onclick="mostrarPedras.adicionarBranco()">
+                        <input type="button" value="X14" class="btn-outline white btn-full" onclick="insert('white')"
+                        id="btn-branco" >
 
-                        <input type="button" value="X2" class="btn-outline black btn-full" onclick="mostrarPedras.adicionarPreto()">
+                        <input type="button" value="X2" class="btn-outline black btn-full" onclick="insert('black')"id="btn-preto" >
                     </div>
                 <!-- Terceira linha -->
                     <div>
-                        <input type="button" value="Limpar" id="new_count" class="btn-full" onclick="limparPedras()">
-                        <input type="button" value="Calcular" id="new_count" class="btn-full" onclick="btn_calcular()">
+                        <input 
+                        type="button" 
+                        value="Limpar" 
+                        id="clean-Count" 
+                        class="new_count limpar" 
+                        onclick="limparStone()">
+
+                        <input 
+                        type="button" 
+                        value="Calcular" 
+                        id="new_count" 
+                        class="new_count calcular" 
+                        onclick="btn_calculate.calcularDouble()">
                     </div>
               </div>
               
@@ -114,12 +128,20 @@
                             </div>                    
                         </div>
                     </section>
-                    <section class="newaccount newaccount1">
-                        <span class="material-symbols-outlined" onclick="cliqueEmCalcular()">
+                    <section class="newaccount newaccount1" >
+                        <a href="#container-menu">
+                            
+                            <span class="material-symbols-outlined"  onclick="cliqueEmCalcular()">
                             add_circle
                             </span>
-                        <p>Clique em <strong>Calcular</strong> 
-                            para adicionar</p>
+
+                            <p>
+                                Clique em
+                                <strong> Calcular</strong> 
+                                para adicionar
+                            </p>
+
+                        </a>              
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn1" onclick="limparConta(1)">
                 </div>
@@ -187,9 +209,19 @@
                         </div>
                     </section>
                     <section class="newaccount newaccount2">
-                        <span class="material-symbols-outlined" onclick="cliqueEmCalcular()"> add_circle </span>
-                        <p>Clique em <strong>Calcular</strong> 
-                            para adicionar</p>
+                        <a href="#container-menu">
+                            
+                            <span class="material-symbols-outlined"  onclick="cliqueEmCalcular()">
+                            add_circle
+                            </span>
+
+                            <p>
+                                Clique em
+                                <strong> Calcular</strong> 
+                                para adicionar
+                            </p>
+
+                        </a>             
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn2" onclick="limparConta(2)">
                 </div>
@@ -257,11 +289,19 @@
                         </div>
                     </section>
                     <section class="newaccount newaccount3">
-                        <span class="material-symbols-outlined" onclick="cliqueEmCalcular()">
+                        <a href="#container-menu">
+                            
+                            <span class="material-symbols-outlined"  onclick="cliqueEmCalcular()">
                             add_circle
                             </span>
-                        <p>Clique em <strong>Calcular</strong> 
-                            para adicionar</p>
+
+                            <p>
+                                Clique em
+                                <strong> Calcular</strong> 
+                                para adicionar
+                            </p>
+
+                        </a>             
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn3" onclick="limparConta(3)">
                 </div>
@@ -328,12 +368,20 @@
                             </div>                        
                         </div>
                     </section>
-                    <section class="newaccount newaccount4">
-                        <span class="material-symbols-outlined" onclick="cliqueEmCalcular()">
+                    <section class="newaccount newaccount4" >
+                        <a href="#container-menu">
+                            
+                            <span class="material-symbols-outlined"  onclick="cliqueEmCalcular()">
                             add_circle
                             </span>
-                        <p>Clique em <strong>Calcular</strong> 
-                            para adicionar</p>
+
+                            <p>
+                                Clique em
+                                <strong> Calcular</strong> 
+                                para adicionar
+                            </p>
+
+                        </a>             
                     </section>
                         <input type="button" value="Limpar" class="btn-clean btn-full btn4" onclick="limparConta(4)">
                 </div>
@@ -356,8 +404,20 @@
 
     </section>
 
-    
+    <span id="modal">
+        <div id="fade"> 
+            <img id="passo" src="imagens/tutoriais/passo1_mobile.svg" alt="">
 
+            <span class="btn">
+                <span class="material-symbols-rounded btn-modal btn-skip" onclick="funcoesTutorial.btnSkipModal()">
+                    arrow_forward
+                </span>
+                <span class="material-symbols-outlined btn-modal btn-close" onclick="funcoesTutorial.btnCloseModal()">close</span>
+            </span>
+            
+        </div>
+        
+    </span>
 
     <script src="scripts/scripts.js"></script>
 </body>
