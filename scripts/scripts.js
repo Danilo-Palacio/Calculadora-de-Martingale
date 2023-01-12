@@ -19,68 +19,7 @@ function cliqueDobro(){ // Botão de Dobro
 
 // Pedras escolhidas
 
-/* let pedra = {
-        Vermelha : {
-            emoji:`\u{1F534}`,
-            quantidade:[],
-            adicionarVermelho(){
-                if (inputValue.value == 0 ){
-                    alert('Valor Invalido')
-                }else{
-                    pedra.Vermelha.quantidade.push(Number(inputValue.value))
-            
-                    var option = document.createElement('option')
-                    option.text=`Adicionado R$${inputValue.value} ao ${pedra.Vermelha.emoji}.`
-                    select.appendChild(option)
-        
-                    btn_calculate.status.enable()  
-            
-                    pedra.emojiDasPedras += 1+`${pedra.Vermelha.emoji}`
-                } 
-            }
-        },
-        Branca : {
-            emoji:`\u{26AA}`,
-            quantidade:[],
-            adicionarBranco(){
-                if (inputValue.value == 0 ){
-                    alert('Valor Invalido')
-                }else{
-                    pedra.Branca.quantidade.push(Number(inputValue.value))
-            
-                    var option = document.createElement('option')
-                    option.text=`Adicionado R$${inputValue.value} ao ${pedra.Branca.emoji}.`
-                    select.appendChild(option)
-        
-                    btn_calculate.status.enable()  
-            
-                    pedra.emojiDasPedras += `${pedra.Branca.emoji}`
-                }
-            },
-        },
-        Preta : {
-            emoji:`\u{26AB}`,
-            quantidade:[],
-            adicionarPreto(){
 
-                if (inputValue.value == 0 ){
-                    alert('Valor Invalido')
-                }else{
-                    pedra.Preta.quantidade.push(Number(inputValue.value))
-            
-                    var option = document.createElement('option')
-                    option.text=`Adicionado R$${inputValue.value} ao ${pedra.Preta.emoji}.`
-                    select.appendChild(option)
-        
-                    btn_calculate.status.enable()          
-            
-                    pedra.Preta.quantidade += 1;
-                }
-            }
-        },
-        emojiDasPedras : []
-    };
-    */
     
 let stone ={
         red:{
