@@ -551,7 +551,7 @@ function cliqueEmCalcular(){
 
 //Tutorial
 
-/*
+
 window.addEventListener("load", function(event) {
     if(window.innerWidth >= 768){
         //Desktop
@@ -596,4 +596,3 @@ let funcoesTutorial = {
     
 }
 
-*/
